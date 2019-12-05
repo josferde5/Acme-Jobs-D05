@@ -1,0 +1,10 @@
+#ListView
+authenticated.auditRecord.list.label.title = Title
+authenticated.auditRecord.list.label.creationMoment = Creation moment
+
+#FormView
+authenticated.auditRecord.form.label.title = Title
+authenticated.auditRecord.form.label.creationMoment = Creation moment
+authenticated.auditRecord.form.label.body = Body
+authenticated.auditRecord.form.label.status = Status
+authenticated.auditRecord.form.button.return = Return

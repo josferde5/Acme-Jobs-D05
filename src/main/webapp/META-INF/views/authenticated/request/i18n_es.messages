@@ -1,0 +1,11 @@
+authenticated.request.list.label.deadline = Fecha l\u00edmite
+authenticated.request.list.label.title = T\u00edtulo
+
+
+#Form 
+authenticated.request.form.label.ticker = Identificador
+authenticated.request.form.label.title =  T\u00edtulo
+authenticated.request.form.label.moment = Fecha de creaci\u00f3n
+authenticated.request.form.label.deadline = Fecha l\u00edmite
+authenticated.request.form.label.description = Descripci\u00f3n
+authenticated.request.form.label.reward = Recompensa

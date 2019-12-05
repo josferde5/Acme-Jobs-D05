@@ -1,0 +1,19 @@
+administrator.challenge.list.label.deadline = Fecha l\u00edmite
+administrator.challenge.list.label.title = T\u00edtulo
+
+administrator.challenge.form.label.title = T\u00edtulo:
+administrator.challenge.form.label.deadline = Fecha l\u00edmite:
+administrator.challenge.form.label.description = Descripci\u00f3n:
+administrator.challenge.form.label.goal.bronze = Objetivo bronce:
+administrator.challenge.form.label.goal.silver = Objetivo plata:
+administrator.challenge.form.label.goal.gold = Objetivo oro:
+administrator.challenge.form.label.reward.bronze = Recompensa bronce:
+administrator.challenge.form.label.reward.silver = Recompensa plata:
+administrator.challenge.form.label.reward.gold = Recompensa oro:
+
+administrator.challenge.form.button.return = Volver
+administrator.challenge.form.button.create = Crear
+administrator.challenge.form.button.update = Modificar
+administrator.challenge.form.button.delete = Eliminar
+
+administrator.challenge.list.button.new = Crear reto

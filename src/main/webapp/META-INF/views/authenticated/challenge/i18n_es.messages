@@ -1,0 +1,14 @@
+authenticated.challenge.list.label.deadline = Fecha l\u00edmite
+authenticated.challenge.list.label.title = T\u00edtulo
+
+authenticated.challenge.form.label.title = T\u00edtulo:
+authenticated.challenge.form.label.deadline = Fecha l\u00edmite:
+authenticated.challenge.form.label.description = Descripci\u00f3n:
+authenticated.challenge.form.label.goal.bronze = Objetivo bronce:
+authenticated.challenge.form.label.goal.silver = Objetivo plata:
+authenticated.challenge.form.label.goal.gold = Objetivo oro:
+authenticated.challenge.form.label.reward.bronze = Recompensa bronce:
+authenticated.challenge.form.label.reward.silver = Recompensa plata:
+authenticated.challenge.form.label.reward.gold = Recompensa oro:
+
+authenticated.challenge.form.button.return = Volver

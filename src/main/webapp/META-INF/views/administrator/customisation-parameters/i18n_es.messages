@@ -1,0 +1,5 @@
+administrator.customParameters.form.label.spamWordsEn = Palabras spam (ingl\u00e9s):
+administrator.customParameters.form.label.spamWordsSp = Palabras spam (espa\u00f1ol):
+administrator.customParameters.form.label.threshold = Umbral de spam (%):
+administrator.customParameters.form.button.update = Actualizar
+administrator.customParameters.form.button.return = Volver

@@ -1,0 +1,8 @@
+#ListView
+authenticated.duty.form.label.duty.title = T\u00edtulo
+authenticated.duty.form.label.duty.percentTime = Porcentaje de tiempo
+#FormView
+authenticated.duty.form.label.duty.title = T\u00edtulo
+authenticated.duty.form.label.duty.description = Descripci\u00f3n del deber
+authenticated.duty.form.label.duty.percentTime = Porcentaje de tiempo
+authenticated.duty.form.button.return = Regresa

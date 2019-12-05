@@ -1,0 +1,8 @@
+#ListView
+auditor.duty.form.label.duty.title = Title
+auditor.duty.form.label.duty.percentTime = Percent Time
+#FormView
+auditor.duty.form.label.duty.title = Title
+auditor.duty.form.label.duty.description = Description
+auditor.duty.form.label.duty.percentTime = Percent Time
+auditor.duty.form.button.return = Return

@@ -1,0 +1,16 @@
+#ListView
+authenticated.job.list.label.reference = Reference
+authenticated.job.list.label.title = Title
+authenticated.job.list.label.deadline = Deadline
+
+#FormView
+authenticated.job.form.label.reference  = Reference
+authenticated.job.form.label.title = Title
+authenticated.job.form.label.deadline = Deadline
+authenticated.job.form.label.salary = Salary
+authenticated.job.form.label.status = Status
+authenticated.job.form.label.moreInfo = More information
+authenticated.job.form.label.descriptor.description = Description
+authenticated.job.form.button.return = Return
+authenticated.job.form.button.list.duties = List Duties
+authenticated.job.form.button.list.auditRecords = List Audit records

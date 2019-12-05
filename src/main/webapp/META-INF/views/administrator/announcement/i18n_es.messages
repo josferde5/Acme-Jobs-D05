@@ -1,0 +1,13 @@
+administrator.announcement.list.label.moment = Momento
+administrator.announcement.list.label.title = T\u00edtulo
+
+administrator.announcement.form.label.title = T\u00edtulo:
+administrator.announcement.form.label.moment = Momento:
+administrator.announcement.form.label.moreInfo = M\u00E1s Info:
+administrator.announcement.form.label.text = Texto:
+administrator.announcement.form.button.return = Volver
+administrator.announcement.form.button.create = Crear
+administrator.announcement.form.button.delete = Borrar
+administrator.announcement.form.button.update = Actualizar
+
+administrator.announcement.list.button.new = Crear anuncio

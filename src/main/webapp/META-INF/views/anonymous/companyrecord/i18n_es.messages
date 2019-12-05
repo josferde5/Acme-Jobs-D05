@@ -1,0 +1,13 @@
+anonymous.companyrecord.list.label.company = Compa\u00f1\u00eda
+anonymous.companyrecord.list.label.website = Web
+
+anonymous.companyrecord.form.label.name = Compa\u00f1\u00eda
+anonymous.companyrecord.form.label.incorporated = Incorporado
+anonymous.companyrecord.form.label.sector = Sector
+anonymous.companyrecord.form.label.ceo = CEO
+anonymous.companyrecord.form.label.description = Descripci\u00f3n
+anonymous.companyrecord.form.label.telephone = Tel\u00e9fono
+anonymous.companyrecord.form.label.email = Email
+anonymous.companyrecord.form.label.website = Web
+anonymous.companyrecord.form.label.stars = Valoraci\u00f3n
+anonymous.companyrecord.form.button.return = Volver

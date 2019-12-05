@@ -1,0 +1,16 @@
+#ListView
+auditor.job.list.label.reference = Reference
+auditor.job.list.label.title = Title
+auditor.job.list.label.deadline = Deadline
+
+#FormView
+auditor.job.form.label.reference  = Reference
+auditor.job.form.label.title = Title
+auditor.job.form.label.deadline = Deadline
+auditor.job.form.label.salary = Salary
+auditor.job.form.label.status = Status
+auditor.job.form.label.moreInfo = More information
+auditor.job.form.label.descriptor.description = Description
+auditor.job.form.button.return = Return
+auditor.job.form.button.list.duties = List Duties
+auditor.job.form.button.list.auditRecords = List Audit records

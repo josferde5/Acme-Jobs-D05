@@ -1,0 +1,7 @@
+authenticated.messageThread.list.label.title = T\u00edtulo
+authenticated.messageThread.list.label.moment = Momento
+
+authenticated.messageThread.form.label.title = T\u00edtulo:
+authenticated.messageThread.form.label.moment = Momento:
+authenticated.messageThread.form.button.return = Volver
+authenticated.messageThread.form.button.listMessages = Listar mensajes

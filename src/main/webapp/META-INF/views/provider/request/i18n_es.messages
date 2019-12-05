@@ -1,0 +1,16 @@
+#Form 
+provider.request.form.label.ticker = Identificador
+provider.request.form.label.title = T\u00edtulo
+provider.request.form.label.moment = Fecha de creacion
+provider.request.form.label.deadline = Fecha limite
+provider.request.form.label.description = Descripcion
+provider.request.form.label.reward = Recompensa
+provider.request.form.button.create = Crea
+provider.request.form.button.return = Regresa
+provider.request.list.label.deadline = Fin de solicitud:
+provider.request.list.label.title = T\u00edtulo:
+provider.request.list.button.new = Crear solicitud
+provider.request.label.accept= ¿Seguro que quieres crear una solicitud?
+
+#Error
+provider.request.error.must-accept = Debe aceptar que quiere crear una solicitud

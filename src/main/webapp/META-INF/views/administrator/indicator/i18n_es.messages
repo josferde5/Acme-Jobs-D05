@@ -1,0 +1,17 @@
+administrator.indicators.form.label.totalNumberOfAnnouncements = Cantidad de anuncios:
+administrator.indicators.form.label.totalNumberOfCompanyRecords = Cantidad de compa\u00f1\u00edas:
+administrator.indicators.form.label.totalNumberOfInvestorRecords = Cantidad de inversores:
+administrator.indicators.form.label.minimumRewardsOfActiveRequests = Salario m\u00ednimo de las peticiones activas:
+administrator.indicators.form.label.maximumRewardsOfActiveRequests = Salario m\u00E1ximo de las peticiones activas:
+administrator.indicators.form.label.averageRewardsOfActiveRequests = Salario medio de las peticiones activas:
+administrator.indicators.form.label.standardDeviationOfActiveRequests = Desviaci\u00F3n est\u00E1ndar del salario de las peticiones activas:
+administrator.indicators.form.label.minimumRewardsOfActiveOffers = Salario m\u00ednimo de las ofertas activas:
+administrator.indicators.form.label.maximumRewardsOfActiveOffers = Salario m\u00E1ximo de las ofertas activas:
+administrator.indicators.form.label.averageRewardsOfActiveOffers = Salario medio de las ofertas activas:
+administrator.indicators.form.label.standardDeviationOfActiveOffers = Desviaci\u00F3n est\u00E1ndar del salario de las ofertas activas:
+
+administrator.indicators.form.label.averageNumberOfJobsPerEmployer = Media de trabajos por empleador:
+administrator.indicators.form.label.averageNumberOfApplicationsPerEmployer = Media de solicitudes por empleador:
+administrator.indicators.form.label.averageNumberOfApplicationsPerWorker = Media de solicitudes por trabajador:
+
+administrator.indicators.form.button.return = Volver

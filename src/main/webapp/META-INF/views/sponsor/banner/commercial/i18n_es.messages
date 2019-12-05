@@ -1,0 +1,12 @@
+sponsor.banner.list.label.slogan = Eslogan
+sponsor.banner.list.label.type = Tipo
+
+sponsor.banner.commercial.form.label.picture = Imagen:
+sponsor.banner.commercial.form.label.slogan = Eslogan:
+sponsor.banner.commercial.form.label.target = Target:
+sponsor.banner.commercial.form.label.creditCard = Tarjeta de cr\u00e9dito:
+
+sponsor.banner.commercial.form.button.create = Crear
+sponsor.banner.commercial.form.button.update = Actualizar
+sponsor.banner.commercial.form.button.delete = Eliminar
+sponsor.banner.commercial.form.button.return = Volver

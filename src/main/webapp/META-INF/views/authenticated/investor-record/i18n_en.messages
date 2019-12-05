@@ -1,0 +1,9 @@
+authenticated.investorRecord.form.label.name = Name:
+authenticated.investorRecord.form.label.sector = Sector:
+authenticated.investorRecord.form.label.statement = Statement:
+authenticated.investorRecord.form.label.stars = Stars:
+authenticated.investorRecord.form.button.return = Return
+
+authenticated.investorRecord.list.label.name = Name
+authenticated.investorRecord.list.label.sector = Sector
+authenticated.investorRecord.list.label.stars = Stars

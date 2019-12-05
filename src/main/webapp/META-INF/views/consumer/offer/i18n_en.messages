@@ -1,0 +1,17 @@
+consumer.offer.form.label.title = Title:
+consumer.offer.form.label.deadline = Deadline:
+consumer.offer.form.label.text = Text:
+consumer.offer.form.label.minMoney = Minimum money offered:
+consumer.offer.form.label.maxMoney = Maximum money offered:
+consumer.offer.form.label.moneyRange = Offer:
+consumer.offer.form.label.creationMoment = Creation moment:
+consumer.offer.form.label.ticker = Ticker:
+consumer.offer.form.button.return = Return
+consumer.offer.form.button.create = Create
+consumer.offer.list.label.deadline = Deadline:
+consumer.offer.list.label.title = Title:
+consumer.offer.list.button.new = Create new offer
+consumer.offer.label.confirm = Confirm creation
+
+
+consumer.offer.error.must-confirm = You must confirm the creation of the offer since it cannot be deleted

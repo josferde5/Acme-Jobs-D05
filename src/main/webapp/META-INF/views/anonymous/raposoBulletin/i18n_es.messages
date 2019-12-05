@@ -1,0 +1,10 @@
+anonymous.raposoBulletin.form.label.author = Autor:
+anonymous.raposoBulletin.form.label.text = Texto: 
+anonymous.raposoBulletin.form.label.place = Lugar: 
+anonymous.raposoBulletin.form.button.create = ¡Postear!
+anonymous.raposoBulletin.form.button.return = Volver
+
+anonymous.raposoBulletin.list.label.moment = Momento
+anonymous.raposoBulletin.list.label.author = Autor
+anonymous.raposoBulletin.list.label.place = Lugar
+anonymous.raposoBulletin.list.label.text = Texto

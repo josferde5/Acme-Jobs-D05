@@ -1,0 +1,10 @@
+authenticated.offer.list.label.deadline = Deadline
+authenticated.offer.list.label.title = Title
+
+authenticated.offer.form.label.title = Title:
+authenticated.offer.form.label.creationMoment = Creation moment:
+authenticated.offer.form.label.deadline = Deadline:
+authenticated.offer.form.label.text = Text:
+authenticated.offer.form.label.moneyRange = Money offered:
+authenticated.offer.form.label.ticker = Ticker:
+authenticated.offer.form.button.return = Return

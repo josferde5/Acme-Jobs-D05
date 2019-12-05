@@ -1,0 +1,12 @@
+sponsor.banner.list.label.slogan = Slogan
+sponsor.banner.list.label.type = Type
+
+sponsor.banner.commercial.form.label.picture = Picture:
+sponsor.banner.commercial.form.label.slogan = Slogan:
+sponsor.banner.commercial.form.label.target = Target:
+sponsor.banner.commercial.form.label.creditCard = Credit card:
+
+sponsor.banner.commercial.form.button.create = Create
+sponsor.banner.commercial.form.button.update = Update
+sponsor.banner.commercial.form.button.delete = Delete
+sponsor.banner.commercial.form.button.return = Return

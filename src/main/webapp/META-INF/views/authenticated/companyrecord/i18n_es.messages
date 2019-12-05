@@ -1,0 +1,13 @@
+authenticated.companyrecord.list.label.company = Compa\u00f1\u00eda
+authenticated.companyrecord.list.label.website = Web
+
+authenticated.companyrecord.form.label.name = Compa\u00f1\u00eda
+authenticated.companyrecord.form.label.incorporated = Incorporado
+authenticated.companyrecord.form.label.sector = Sector
+authenticated.companyrecord.form.label.ceo = CEO
+authenticated.companyrecord.form.label.description = Descripci\u00f3n
+authenticated.companyrecord.form.label.telephone = Tel\u00e9fono
+authenticated.companyrecord.form.label.email = Email
+authenticated.companyrecord.form.label.website = Web
+authenticated.companyrecord.form.label.stars = Valoraci\u00f3n
+authenticated.companyrecord.form.button.return = Volver

@@ -1,0 +1,12 @@
+worker.application.list.label.status = Estado
+worker.application.list.label.statement = Declaracion
+worker.application.list.label.creationMoment = Fecha de creacion
+worker.application.list.label.referenceNumber = Numero de referencia
+
+worker.application.form.label.qualifications = Requisitos
+worker.application.form.label.skills = Habilidades
+worker.application.form.label.status = Estado
+worker.application.form.label.statement = Declaracion
+worker.application.form.label.creationMoment = Fecha de creacion
+worker.application.form.label.referenceNumber = Numero de referencia
+worker.application.form.button.return = Volver

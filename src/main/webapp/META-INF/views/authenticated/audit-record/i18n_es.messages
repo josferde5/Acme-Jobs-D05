@@ -1,0 +1,10 @@
+#ListView
+authenticated.auditRecord.list.label.title = T\u00edtulo
+authenticated.auditRecord.list.label.creationMoment = Fecha de creaci\u00f3n
+
+#FormView
+authenticated.auditRecord.form.label.title = T\u00edtulo
+authenticated.auditRecord.form.label.creationMoment = Fecha de creaci\u00f3n
+authenticated.auditRecord.form.label.body = Cuerpo
+authenticated.auditRecord.form.label.status = Estado
+authenticated.auditRecord.form.button.return = Volver

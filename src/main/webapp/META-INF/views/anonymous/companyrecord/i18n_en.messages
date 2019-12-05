@@ -1,0 +1,13 @@
+anonymous.companyrecord.list.label.company = Company
+anonymous.companyrecord.list.label.website = Web
+
+anonymous.companyrecord.form.label.name = Company
+anonymous.companyrecord.form.label.incorporated = Incorporated
+anonymous.companyrecord.form.label.sector = Sector
+anonymous.companyrecord.form.label.ceo = CEO
+anonymous.companyrecord.form.label.description = Description
+anonymous.companyrecord.form.label.telephone = Telephone
+anonymous.companyrecord.form.label.email = Email
+anonymous.companyrecord.form.label.website = Website
+anonymous.companyrecord.form.label.stars = Valoration
+anonymous.companyrecord.form.button.return = Return

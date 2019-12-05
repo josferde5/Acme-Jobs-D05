@@ -1,0 +1,8 @@
+authenticated.announcement.list.label.moment = Momento
+authenticated.announcement.list.label.title = T\u00edtulo
+
+authenticated.announcement.form.label.title = T\u00edtulo:
+authenticated.announcement.form.label.moment = Momento:
+authenticated.announcement.form.label.moreInfo = M\u00E1s Info:
+authenticated.announcement.form.label.text = Texto:
+authenticated.announcement.form.button.return = Volver

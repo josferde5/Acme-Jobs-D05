@@ -1,0 +1,17 @@
+administrator.indicators.form.label.totalNumberOfAnnouncements = Total announcements:
+administrator.indicators.form.label.totalNumberOfCompanyRecords = Total company records:
+administrator.indicators.form.label.totalNumberOfInvestorRecords = Total investor records:
+administrator.indicators.form.label.minimumRewardsOfActiveRequests = Minimum reward of active requests:
+administrator.indicators.form.label.maximumRewardsOfActiveRequests = Maximum reward of active requests:
+administrator.indicators.form.label.averageRewardsOfActiveRequests = Average reward of active requests:
+administrator.indicators.form.label.standardDeviationOfActiveRequests = Standard deviation of active requests:
+administrator.indicators.form.label.minimumRewardsOfActiveOffers = Minimum reward of active offers:
+administrator.indicators.form.label.maximumRewardsOfActiveOffers = Maximum reward of active offers:
+administrator.indicators.form.label.averageRewardsOfActiveOffers = Average reward of active offers:
+administrator.indicators.form.label.standardDeviationOfActiveOffers = Standard deviation of active offers:
+
+administrator.indicators.form.label.averageNumberOfJobsPerEmployer = Average number of jobs per employer:
+administrator.indicators.form.label.averageNumberOfApplicationsPerEmployer = Average number of applications per employer:
+administrator.indicators.form.label.averageNumberOfApplicationsPerWorker = Average number of applications per worker:
+
+administrator.indicators.form.button.return = Return

@@ -1,0 +1,5 @@
+administrator.banner.list.label.slogan = Slogan
+administrator.banner.list.label.type = Type
+
+administrator.banner.list.button.commercial = Create commercial banner
+administrator.banner.list.button.nonCommercial =  Create non-commercial banner

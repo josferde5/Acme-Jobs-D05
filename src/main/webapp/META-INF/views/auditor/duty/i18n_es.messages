@@ -1,0 +1,8 @@
+#ListView
+auditor.duty.form.label.duty.title = T\u00edtulo
+auditor.duty.form.label.duty.percentTime = Porcentaje de tiempo
+#FormView
+auditor.duty.form.label.duty.title = T\u00edtulo
+auditor.duty.form.label.duty.description = Descripci\u00f3n del deber
+auditor.duty.form.label.duty.percentTime = Porcentaje de tiempo
+auditor.duty.form.button.return = Regresa

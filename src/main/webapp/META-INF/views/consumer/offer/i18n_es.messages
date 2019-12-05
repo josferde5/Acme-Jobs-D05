@@ -1,0 +1,16 @@
+consumer.offer.form.label.title = T\u00edtulo:
+consumer.offer.form.label.deadline = Fin de la oferta:
+consumer.offer.form.label.text = Texto:
+consumer.offer.form.label.minMoney = M\u00ednima oferta:
+consumer.offer.form.label.maxMoney = M\u00E1xima oferta:
+consumer.offer.form.label.moneyRange = Oferta:
+consumer.offer.form.label.creationMoment = Fecha de creaci\u00f3n:
+consumer.offer.form.label.ticker = Identificador:
+consumer.offer.form.button.return = Volver
+consumer.offer.form.button.create = Crear
+consumer.offer.list.button.new = Crear oferta
+consumer.offer.list.label.deadline = Fin de oferta:
+consumer.offer.list.label.title = T\u00edtulo:
+
+consumer.offer.label.confirm = Confimar creaci\u00f3n
+consumer.offer.error.must-confirm = Debes confirmar la creaci\u00f3n de la oferta debido a que no se puede eliminar

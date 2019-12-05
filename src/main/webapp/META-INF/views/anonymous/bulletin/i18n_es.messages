@@ -1,0 +1,10 @@
+anonymous.bulletin.form.label.author = Autor:
+anonymous.bulletin.form.label.text = Texto:
+anonymous.bulletin.form.label.contact = Contacto:
+anonymous.bulletin.form.button.create = Crea
+anonymous.bulletin.form.button.return = Regresa
+
+anonymous.bulletin.list.label.moment = Momento
+anonymous.bulletin.list.label.author = Autor
+anonymous.bulletin.list.label.text = Texto
+anonymous.bulletin.list.label.contact = Contacto

@@ -1,0 +1,12 @@
+anonymous.bulletin.form.label.company = Company:
+anonymous.bulletin.form.label.description = Description: 
+anonymous.bulletin.form.label.contact = Contact: 
+anonymous.bulletin.form.label.deadline = Deadline: 
+anonymous.bulletin.form.button.create = Publish
+anonymous.bulletin.form.button.return = Return
+
+anonymous.bulletin.list.label.moment = Moment
+anonymous.bulletin.list.label.company = Company
+anonymous.bulletin.list.label.description = Description
+anonymous.bulletin.list.label.deadline = Deadline
+anonymous.bulletin.list.label.contact = Contact

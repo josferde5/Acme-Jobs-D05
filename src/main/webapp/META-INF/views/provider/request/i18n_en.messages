@@ -1,0 +1,17 @@
+#Form 
+provider.request.form.label.ticker = Ticker 
+provider.request.form.label.title = Title
+provider.request.form.label.moment = Creation Moment
+provider.request.form.label.deadline = Deadline
+provider.request.form.label.description = Description
+provider.request.form.label.reward = Reward
+provider.request.form.button.create = Create
+provider.request.form.button.return = Return
+provider.request.list.label.deadline = Deadline:
+provider.request.list.label.title = Title:
+provider.request.list.button.new = Create new Request
+provider.request.label.accept = Are you sure you want to create a request?
+
+#Error
+provider.request.error.must-accept = Must accept for create a request
+

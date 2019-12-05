@@ -1,0 +1,18 @@
+administrator.companyrecord.list.label.company = Compa\u00f1\u00eda
+administrator.companyrecord.list.label.website = Web
+
+administrator.companyrecord.form.label.name = Compa\u00f1\u00eda
+administrator.companyrecord.form.label.incorporated = Incorporado
+administrator.companyrecord.form.label.sector = Sector
+administrator.companyrecord.form.label.ceo = CEO
+administrator.companyrecord.form.label.description = Descripci\u00f3n
+administrator.companyrecord.form.label.telephone = Tel\u00e9fono
+administrator.companyrecord.form.label.email = Email
+administrator.companyrecord.form.label.website = Web
+administrator.companyrecord.form.label.stars = Valoraci\u00f3n
+administrator.companyrecord.form.button.return = Volver
+administrator.companyrecord.form.button.create = Crear
+administrator.companyrecord.form.button.update = Actualizar
+administrator.companyrecord.form.button.delete = Eliminar
+
+administrator.companyrecord.list.button.new = Crear registro de compa\u00f1\u00eda

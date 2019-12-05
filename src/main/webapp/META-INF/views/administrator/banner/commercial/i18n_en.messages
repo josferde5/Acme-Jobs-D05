@@ -1,0 +1,12 @@
+administrator.banner.list.label.slogan = Slogan
+administrator.banner.list.label.type = Type
+
+administrator.banner.commercial.form.label.picture = Picture:
+administrator.banner.commercial.form.label.slogan = Slogan:
+administrator.banner.commercial.form.label.target = Target:
+administrator.banner.commercial.form.label.creditCard = Credit card:
+
+administrator.banner.commercial.form.button.create = Create
+administrator.banner.commercial.form.button.update = Update
+administrator.banner.commercial.form.button.delete = Delete
+administrator.banner.commercial.form.button.return = Return

@@ -1,0 +1,8 @@
+#ListView
+authenticated.duty.form.label.duty.title = Title
+authenticated.duty.form.label.duty.percentTime = Percent Time
+#FormView
+authenticated.duty.form.label.duty.title = Title
+authenticated.duty.form.label.duty.description = Description
+authenticated.duty.form.label.duty.percentTime = Percent Time
+authenticated.duty.form.button.return = Return
