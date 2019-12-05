@@ -152,7 +152,7 @@
 
 	<bean id="challenge01" class="acme.entities.challenges.Challenge">
 		<property name="title" value="Challenge 1" />
-		<property name="deadline" value="2019/12/04 00:00" />
+		<property name="deadline" value="2020/12/04 00:00" />
 		<property name="description" value="This is a sample description of a challenge" />
 		<property name="goalBronze" value="Develop C Level" />
 		<property name="goalSilver" value="Develop B Level" />
