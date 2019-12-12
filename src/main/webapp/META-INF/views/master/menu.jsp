@@ -50,6 +50,7 @@
 			<acme:menu-suboption code="master.menu.authenticated.challenges.list" action="/authenticated/challenge/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.jobs.list" action="/authenticated/job/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.messageThread.listMine" action="/authenticated/message-thread/list_mine"/>
+   			<acme:menu-suboption code="master.menu.authenticated.auditorRequest.create" action="/authenticated/auditor-request/create"/>
     	</acme:menu-option>
     	
     	<acme:menu-option code="master.menu.provider.functionalities" access="hasRole('Provider')">
@@ -94,6 +95,7 @@
     		<acme:menu-suboption code="master.menu.administrator.investorRecord.list" action="/administrator/investor-record/list"/>
 			<acme:menu-suboption code="master.menu.administrator.companyRecord.list" action="/administrator/company-record/list"/>
 			<acme:menu-suboption code="master.menu.administrator.banner.list" action="/administrator/banner/list"/>
+			<acme:menu-suboption code="master.menu.administrator.auditorRequest.list" action="/administrator/auditor-request/list"/>
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.customisationParameters.display" action="/administrator/customisation-parameters/display"/>
 			<acme:menu-suboption code="master.menu.administrator.indicators.display" action="/administrator/indicator/display"/>

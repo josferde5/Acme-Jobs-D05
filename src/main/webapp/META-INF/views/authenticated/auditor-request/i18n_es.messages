@@ -1,0 +1,10 @@
+authenticated.auditorRequest.form.label.firm = Firma: 
+authenticated.auditorRequest.form.label.responsibilityStatement = Declaración de responsabilidad:
+
+authenticated.auditorRequest.form.button.create = Enviar petición al Administrador
+authenticated.auditorRequest.form.button.update = Actualizar
+authenticated.auditorRequest.form.button.return = Volver
+authenticated.auditorRequest.label.confirm = Confirmar
+
+authenticated.auditorRequest.error.must-confirm = Debes confirmar la creación
+authenticated.auditorRequest.error.must-be-unique = Solo puedes hacer 1 petición

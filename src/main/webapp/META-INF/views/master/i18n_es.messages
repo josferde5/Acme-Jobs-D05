@@ -53,6 +53,7 @@ master.menu.authenticated.offers.list = Ofertas
 master.menu.authenticated.challenges.list = Retos
 master.menu.authenticated.jobs.list = Trabajos
 master.menu.authenticated.messageThread.listMine = Tus hilos
+master.menu.authenticated.auditorRequest.create = Vuelvete Auditor
 
 # master.menu.provider ###################################################
 
@@ -115,6 +116,7 @@ master.menu.administrator.challenge.list = Retos
 master.menu.administrator.investorRecord.list = Registros de inversores
 master.menu.administrator.companyRecord.list = Registros de compa\u00f1\u00edas
 master.menu.administrator.banner.list = Banners
+master.menu.administrator.auditorRequest.list = Peticiones de auditores
 master.menu.administrator.customisationParameters.display = Par\u00e1metros de personalizaci\u00f3n
 master.menu.administrator.indicators.display = Estad\u00edsticas
 
