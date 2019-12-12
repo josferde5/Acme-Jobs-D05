@@ -23,11 +23,15 @@ public class AuthenticatedMessageController extends AbstractController<Authentic
 	@Autowired
 	private AuthenticatedMessageShowService			showService;
 
+	@Autowired
+	private AuthenticatedMessageCreateService		createService;
+
 
 	@PostConstruct
 	private void initialise() {
 		this.addCustomCommand(CustomCommand.LIST_THREAD, BasicCommand.LIST, this.listThreadService);
 		this.addBasicCommand(BasicCommand.SHOW, this.showService);
+		this.addBasicCommand(BasicCommand.CREATE, this.createService);
 	}
 
 }

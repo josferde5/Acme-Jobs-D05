@@ -1,0 +1,11 @@
+authenticated.messageThread.users.list.label.username = Nombre de usuario
+authenticated.messageThread.users.list.label.name = Nombre
+authenticated.messageThread.users.list.label.surname = Apellidos
+
+authenticated.messageThread.users.form.label.username = Nombre de usuario:
+authenticated.messageThread.users.form.label.name = Nombre:
+authenticated.messageThread.users.form.label.surname = Apellidos:
+
+authenticated.messageThread.users.form.button.add = A\u00f1adir usuario
+authenticated.messageThread.users.form.button.delete = Eliminar usuario
+authenticated.messageThread.users.form.button.return = Volver
