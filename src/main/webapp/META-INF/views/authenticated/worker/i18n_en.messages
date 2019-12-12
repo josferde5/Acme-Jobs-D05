@@ -1,0 +1,6 @@
+authenticated.worker.worker.form.label.skillsRecord = Skills
+authenticated.worker.worker.form.label.qualificationsRecord = Qualifications
+
+authenticated.worker.worker.form.button.update = Update
+authenticated.worker.worker.form.button.create = Create
+authenticated.worker.worker.form.button.return = Return
