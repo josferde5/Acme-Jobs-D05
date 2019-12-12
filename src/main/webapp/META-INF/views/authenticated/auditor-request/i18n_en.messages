@@ -1,0 +1,10 @@
+authenticated.auditorRequest.form.label.firm = Firm: 
+authenticated.auditorRequest.form.label.responsibilityStatement = Responsibility Statement:
+
+authenticated.auditorRequest.form.button.create = Make request to the administrator
+authenticated.auditorRequest.form.button.update = Update
+authenticated.auditorRequest.form.button.return = Return
+authenticated.auditorRequest.label.confirm = Confirm
+
+authenticated.auditorRequest.error.must-confirm = You must confirm the creation
+authenticated.auditorRequest.error.must-be-unique = You can only create 1 request

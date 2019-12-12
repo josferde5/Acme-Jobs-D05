@@ -54,6 +54,7 @@ master.menu.authenticated.offers.list = Offers
 master.menu.authenticated.challenges.list = Challenges
 master.menu.authenticated.jobs.list = Jobs
 master.menu.authenticated.messageThread.listMine = Your message threads
+master.menu.authenticated.auditorRequest.create = Become an Auditor
 
 # master.menu.provider ###################################################
 
@@ -114,6 +115,7 @@ master.menu.administrator.challenge.list = Challenges
 master.menu.administrator.investorRecord.list = Investor Records
 master.menu.administrator.companyRecord.list = Company Records
 master.menu.administrator.banner.list = Banners
+master.menu.administrator.auditorRequest.list = Auditor Requests
 master.menu.administrator.customisationParameters.display = Customisation Parameters
 master.menu.administrator.indicators.display = Indicators
 

@@ -1,0 +1,10 @@
+administrator.auditorRequest.form.label.username = Username:
+administrator.auditorRequest.form.label.firm = Firm: 
+administrator.auditorRequest.form.label.responsibilityStatement = Responsibility Statement:
+
+administrator.auditorRequest.form.button.accept = Accept
+administrator.auditorRequest.form.button.reject = Reject
+administrator.auditorRequest.form.button.return = Return
+
+administrator.auditorRequest.list.label.username = Username:
+administrator.auditorRequest.list.label.firm = Firm:
