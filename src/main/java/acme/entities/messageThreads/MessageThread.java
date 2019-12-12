@@ -12,6 +12,7 @@ import javax.persistence.TemporalType;
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import acme.entities.messages.Message;
 import acme.framework.entities.Authenticated;
@@ -34,7 +35,7 @@ public class MessageThread extends DomainEntity {
 
 	//Associations
 
-	@NotEmpty
+	@NotNull
 	@OneToMany
 	private Collection<@Valid Message>			messages;
 

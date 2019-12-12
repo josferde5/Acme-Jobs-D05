@@ -1,7 +1,12 @@
 authenticated.messageThread.list.label.title = Title
 authenticated.messageThread.list.label.moment = Moment
+authenticated.messageThread.list.button.create = Create thread
 
 authenticated.messageThread.form.label.title = Title:
 authenticated.messageThread.form.label.moment = Moment:
 authenticated.messageThread.form.button.return = Return
+authenticated.messageThread.form.button.create = Create
 authenticated.messageThread.form.button.listMessages = List messages
+authenticated.messageThread.form.button.listUsers = List users
+authenticated.messageThread.form.button.addUser = Add user
+authenticated.messageThread.form.button.postMessage = Post message
