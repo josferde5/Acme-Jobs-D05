@@ -18,7 +18,7 @@ import acme.framework.services.AbstractUpdateService;
 public class AuthenticatedWorkerUpdateService implements AbstractUpdateService<Authenticated, Worker> {
 
 	@Autowired
-	private AutheticatedWorkerRepository repository;
+	private AuthenticatedWorkerRepository repository;
 
 
 	@Override

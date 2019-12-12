@@ -20,7 +20,7 @@ import acme.framework.services.AbstractCreateService;
 public class AuthenticatedWorkerCreateService implements AbstractCreateService<Authenticated, Worker> {
 
 	@Autowired
-	private AutheticatedWorkerRepository repository;
+	private AuthenticatedWorkerRepository repository;
 
 
 	@Override
