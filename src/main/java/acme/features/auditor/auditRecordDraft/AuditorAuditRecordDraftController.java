@@ -1,5 +1,5 @@
 
-package acme.features.auditor.auditRecord;
+package acme.features.auditor.auditRecordDraft;
 
 import javax.annotation.PostConstruct;
 
@@ -13,24 +13,24 @@ import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/auditor/audit-record/")
-public class AuditorAuditRecordController extends AbstractController<Auditor, AuditRecord> {
+@RequestMapping("/auditor/audit-record-draft/")
+public class AuditorAuditRecordDraftController extends AbstractController<Auditor, AuditRecord> {
 
 	@Autowired
-	private AuditorAuditRecordListService	listService;
+	private AuditorAuditRecordDraftListService		listService;
 
 	@Autowired
-	private AuditorAuditRecordShowService	showService;
+	private AuditorAuditRecordDraftShowService		showService;
 
 	@Autowired
-	private AuditorAuditRecordCreateService	createService;
+	private AuditorAuditRecordDraftUpdateService	updateService;
 
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
-		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
 	}
 
 }

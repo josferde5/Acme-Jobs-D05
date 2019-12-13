@@ -48,8 +48,8 @@ public class AuditorAuditRecordCreateService implements AbstractCreateService<Au
 	@Override
 	public AuditRecord instantiate(final Request<AuditRecord> request) {
 		AuditRecord r = new AuditRecord();
-		Auditor a = this.repository.findOneAuditorById(request.getPrincipal().getActiveRoleId());
 		Job j = this.repository.findOneJobById(request.getModel().getInteger("id"));
+		Auditor a = this.repository.findOneAuditorById(request.getPrincipal().getActiveRoleId());
 		r.setAuditor(a);
 		r.setJob(j);
 		return r;

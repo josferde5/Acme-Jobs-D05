@@ -1,5 +1,5 @@
 
-package acme.features.auditor.auditRecord;
+package acme.features.auditor.auditRecordDraft;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,10 +12,10 @@ import acme.framework.components.Request;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AuditorAuditRecordUpdateService implements AbstractUpdateService<Auditor, AuditRecord> {
+public class AuditorAuditRecordDraftUpdateService implements AbstractUpdateService<Auditor, AuditRecord> {
 
 	@Autowired
-	AuditorAuditRecordRepository repository;
+	AuditorAuditRecordDraftRepository repository;
 
 
 	@Override
