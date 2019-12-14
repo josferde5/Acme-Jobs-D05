@@ -9,12 +9,13 @@
 	<jstl:if test="${command != 'create'}">
 		<acme:form-textbox code="worker.application.form.label.referenceNumber" path="referenceNumber" />
 		<acme:form-textbox code="worker.application.form.label.status" path="status" />
-		<acme:form-textarea code="worker.application.form.label.skills" path="skills" />
-		<acme:form-textarea code="worker.application.form.label.qualifications" path="qualifications" />
 		<acme:form-textbox code="worker.application.form.label.creationMoment" path="creationMoment" />
 	</jstl:if>
+	
 	<acme:form-textbox code="worker.application.form.label.statement" path="statement" />
-
+	<acme:form-textarea readonly="true" code="worker.application.form.label.skills" path="skills" />
+	<acme:form-textarea readonly="true" code="worker.application.form.label.qualifications" path="qualifications" />
+	
 	<jstl:if test="${command == 'create'}">
 		<acme:form-hidden path="idJob" />
 	</jstl:if>
