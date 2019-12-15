@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.descriptors.Descriptor;
 import acme.entities.duties.Duty;
 import acme.framework.repositories.AbstractRepository;
 
@@ -17,5 +18,8 @@ public interface EmployerDutyRepository extends AbstractRepository {
 
 	@Query("select du from Duty du where du.id=?1")
 	Duty findOneById(int id);
+
+	@Query("select des from Descriptor des where des.id=?1")
+	Descriptor findDescriptorById(int id);
 
 }

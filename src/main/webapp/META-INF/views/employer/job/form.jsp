@@ -23,16 +23,35 @@
 %>
 
 <acme:form>
-	<acme:form-textbox code="employer.job.form.label.reference" path="reference" readonly="true"/>
-	<acme:form-textbox code="employer.job.form.label.title" path="title" readonly="true"/>
-	<acme:form-moment code="employer.job.form.label.deadline" path="deadline" readonly="true"/>
-	<acme:form-money code="employer.job.form.label.salary" path="salary" readonly="true"/>
-	<acme:form-textbox code="employer.job.form.label.status" path="status" readonly="true"/>
+	<acme:form-textbox code="employer.job.form.label.reference" path="reference" />
+	<acme:form-textbox code="employer.job.form.label.title" path="title" />
+	<acme:form-moment code="employer.job.form.label.deadline" path="deadline" />
+	<acme:form-money code="employer.job.form.label.salary" path="salary" />
+	<jstl:if test="${command != 'create' }">
+		<acme:form-textbox code="employer.job.form.label.status" path="status" />
+	</jstl:if>
+	
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
-	<acme:form-textbox code="employer.job.form.label.descriptor.description" path="descriptor.description" readonly="true"/>
+	<acme:form-textbox code="employer.job.form.label.descriptor.description" path="descriptor.description" />
+	<acme:form-checkbox code="employer.job.form.label.finalMode" path="finalMode"/>
 
 	
-		
+	<jstl:if test="${command == 'show' }">
+		<acme:form-submit code="employer.job.form.label.delete" action="/employer/job/delete"/>
+	</jstl:if>
+	<jstl:if test="${command == 'show' and status != 'published' }">
+		<acme:form-submit code="employer.job.form.label.update" action="/employer/job/update"/>
+	</jstl:if>
+	<jstl:if test="${command == 'delete' }">
+		<acme:form-submit code="employer.job.form.label.delete" action="/employer/job/delete"/>
+	</jstl:if>
+	<jstl:if test="${command == 'update' }">
+		<acme:form-submit code="employer.job.form.label.update" action="/employer/job/update"/>
+	</jstl:if>
+	<jstl:if test="${command == 'create' }">
+		<acme:form-submit code="employer.job.form.label.create" action="/employer/job/create"/>
+	</jstl:if>
+	
   	<acme:form-return code="employer.job.form.button.return"/>
 </acme:form>
 <br>

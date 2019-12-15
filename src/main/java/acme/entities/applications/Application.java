@@ -51,6 +51,11 @@ public class Application extends DomainEntity {
 	@NotBlank
 	private String				qualifications;
 
+	///Add justification for rejected or denied D05
+
+	@NotNull
+	private String				justification;
+
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)

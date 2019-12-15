@@ -16,18 +16,11 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:form>
-	<acme:form-hidden path="descriptorId"/>
-	<acme:form-textbox code="employer.duty.form.label.duty.title" path="title" />
-	<acme:form-textbox code="employer.duty.form.label.duty.description" path="description"/>
-	<acme:form-textbox code="employer.duty.form.label.duty.percentTime" path="percentTime" />
+	<acme:form-textbox code="authenticated.employer.form.label.company" path="company" />
+	<acme:form-textbox code="authenticated.employer.form.label.sector" path="sector" />
+
 	
-	<jstl:if test="${command == 'create'}">
-	
-		<acme:form-submit code="employer.duty.form.button.create" action="/employer/duty/create"/>
-	
-	</jstl:if>
-	
-	
-		
-  	<acme:form-return code="employer.job.form.button.return"/>
+	<acme:form-submit test="${command == 'create'}" code="authenticated.employer.form.button.create" action="/authenticated/employer/create"/>
+	<acme:form-submit test="${command == 'update'}" code="authenticated.employer.form.button.update" action="/authenticated/employer/update"/>
+	<acme:form-return code="authenticated.job.form.button.return"/>
 </acme:form>

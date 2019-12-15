@@ -17,4 +17,16 @@ public interface EmployerApplicationRepository extends AbstractRepository {
 
 	@Query("select j from Application j where j.job.id=?1")
 	Collection<Application> findManyByJobId(int id);
+
+	///List applications grouped by reference
+	//	@Query("select j from Application j where j.job.id=?1 grouped by j.referenceNumber")
+	//	Collection<Application> findManyByJobIdGroupedByReference(int id);
+
+	///List applications grouped by status
+	//	@Query("select j from Application j where j.job.id=?1 grouped by j.status")
+	//	Collection<Application> findManyByJobIdGroupedByStatus(int id);
+
+	///List applications grouped by creation
+	//	@Query("select j from Application j where j.job.id=?1 grouped by j.creationMoment")
+	//	Collection<Application> findManyByJobIdGroupedByCreation(int id);
 }
