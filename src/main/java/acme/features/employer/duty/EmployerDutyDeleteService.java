@@ -1,8 +1,6 @@
 
 package acme.features.employer.duty;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +10,10 @@ import acme.entities.roles.Employer;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.services.AbstractCreateService;
+import acme.framework.services.AbstractDeleteService;
 
 @Service
-public class EmployerDutyCreateService implements AbstractCreateService<Employer, Duty> {
+public class EmployerDutyDeleteService implements AbstractDeleteService<Employer, Duty> {
 
 	@Autowired
 	EmployerDutyRepository repository;
@@ -32,7 +30,6 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-
 		request.bind(entity, errors);
 
 	}
@@ -48,11 +45,12 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 	}
 
 	@Override
-	public Duty instantiate(final Request<Duty> request) {
+	public Duty findOne(final Request<Duty> request) {
 		assert request != null;
-		Duty duty = new Duty();
-
-		return duty;
+		int id = request.getModel().getInteger("id");
+		Duty result;
+		result = this.repository.findOneById(id);
+		return result;
 	}
 
 	@Override
@@ -64,19 +62,14 @@ public class EmployerDutyCreateService implements AbstractCreateService<Employer
 	}
 
 	@Override
-	public void create(final Request<Duty> request, final Duty entity) {
+	public void delete(final Request<Duty> request, final Duty entity) {
 		assert request != null;
 		assert entity != null;
-		this.repository.save(entity);
-
-		int descriptorId = request.getModel().getInteger("id");
-		Descriptor descriptor;
-
-		descriptor = this.repository.findDescriptorById(descriptorId);
-		Collection<Duty> aux = descriptor.getDuties();
-		aux.add(entity);
-		descriptor.setDuties(aux);
+		int id = request.getModel().getInteger("id4");
+		Descriptor descriptor = this.repository.findDescriptorById(id);
+		descriptor.getDuties().remove(entity);
 		this.repository.save(descriptor);
+		this.repository.delete(entity);
 
 	}
 

@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.applications.Application;
+import acme.entities.duties.Duty;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
 import acme.framework.repositories.AbstractRepository;
@@ -27,5 +28,13 @@ public interface EmployerJobRepository extends AbstractRepository {
 	//Retrieve employer
 	@Query("select emp from Employer emp where emp.id=?1")
 	Employer findEmployerById(int id);
+
+	//Retrieve duties
+	@Query("select j.descriptor.duties from Job j where j.id = ?1")
+	Collection<Duty> getDutiesByJobId(int id);
+
+	//Retrieve spam
+	//	@Query("select cp from CustomisationParameters cp")
+	//	CustomisationParameters findCustomParameters();
 
 }

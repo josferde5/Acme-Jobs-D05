@@ -55,7 +55,8 @@
   	<acme:form-return code="employer.job.form.button.return"/>
 </acme:form>
 <br>
-<acme:form>
+<jstl:if test="${command == 'show' }">
+	<acme:form>
 	<acme:form-submit method="get" code="employer.job.form.button.list.duties" action="/employer/duty/list_duties?id=${idDesc}"/>
 </acme:form>
 <br>
@@ -66,3 +67,5 @@
 <acme:form>
 	<acme:form-submit method="get" code="employer.job.form.button.list.applications" action="/employer/application/list?id=${idJob}"/>
 </acme:form>
+</jstl:if>
+

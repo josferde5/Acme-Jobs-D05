@@ -15,3 +15,13 @@ employer.job.form.button.return = Return
 employer.job.form.button.list.duties = List duties
 employer.job.form.button.list.auditRecords = List Audit records
 employer.job.form.button.list.applications = List applications
+
+#Cud operations
+employer.job.form.label.delete = Delete
+employer.job.form.label.update = Update
+employer.job.form.label.create = Create
+
+#Errors
+employer.job.error.applications-delete = Cannot delete with applications
+employer.job.error.must-have-descriptor = Must have descriptor
+employer.job.error.hundred-under = Duties must sum up 100%

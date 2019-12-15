@@ -10,3 +10,6 @@ employer.application.form.label.statement = Declaracion
 employer.application.form.label.creationMoment = Fecha de creacion
 employer.application.form.label.referenceNumber = Numero de referencia
 employer.application.form.button.return = Volver
+
+#Cud operations
+employer.application.form.button.update = Actualizar

@@ -47,18 +47,6 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 
 		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "descriptor.description", "finalMode");
 
-		if (request.getModel().getAttribute("descriptor.description") != null) {
-			model.setAttribute("hasDescriptor", "true");
-		} else {
-			model.setAttribute("hasDescriptor", "false");
-		}
-		Collection<Duty> duties = entity.getDescriptor().getDuties();
-		int aux = duties.stream().mapToInt(x -> new Integer(x.getPercentTime().replaceAll("%", ""))).sum();
-		if (aux == 100) {
-			model.setAttribute("isPercentUnder", "true");
-		} else {
-			model.setAttribute("isPercentUnder", "false");
-		}
 	}
 
 	@Override
@@ -89,16 +77,29 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 		assert entity != null;
 		assert errors != null;
 
-		if (entity.isFinalMode() == true && !entity.getDescriptor().getDescription().isEmpty()) {
-			boolean isDescriptor = request.getModel().getBoolean("hasDescriptor");
+		Boolean finalMode = request.getModel().getBoolean("finalMode");
+		String description = request.getModel().getString("descriptor.description");
+
+		//check validations only if employer puts job as published
+		if (finalMode) {
+			boolean isDescriptor = description != null;
 			//show error
 			errors.state(request, isDescriptor, "descriptor.description", "employer.job.error.must-have-descriptor");
 
-		}
-		if (entity.isFinalMode() == true) {
 			//The duties sum up 100%
-			boolean isPercentUnder = request.getModel().getBoolean("isPercentUnder");
+			Collection<Duty> duties = entity.getDescriptor().getDuties();
+			int aux = duties.stream().mapToInt(x -> new Integer(x.getPercentTime().replaceAll("%", ""))).sum();
+			Boolean isPercentUnder = aux == 100;
 			errors.state(request, isPercentUnder, "finalMode", "employer.job.error.hundred-under");
+
+			//Not considered spam
+			//			CustomisationParameters cp;
+			//			cp = this.repository.findCustomParameters();
+			//			String[] spamEn = cp.getSpamWordsEn().split(",");
+			//			String[] spamSp = cp.getSpamWordsSp().split(",");
+			//			Double thold = cp.getThreshold();
+			//			Arrays.asList(spamEn).stream().
+
 		}
 
 	}

@@ -15,3 +15,13 @@ employer.job.form.button.return = Regresa
 employer.job.form.button.list.duties = Lista deberes
 employer.job.form.button.list.auditRecords = Lista de registros de auditor\u00eda
 employer.job.form.button.list.applications = Lista candidaturas
+
+#Cud operations
+employer.job.form.label.delete = Eliminar
+employer.job.form.label.update = Actualizar
+employer.job.form.label.create = Crear
+
+#Errors
+employer.job.error.applications-delete = No puede eliminar con aplicaciones 
+employer.job.error.must-have-descriptor = Debe contener un descriptor
+employer.job.error.hundred-under = Deberes deben sumar un 100%
