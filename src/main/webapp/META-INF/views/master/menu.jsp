@@ -23,25 +23,24 @@
         	<acme:menu-suboption code="master.menu.anonymous.favourite-link" action="https://reminderpro.appspot.com/"/>
         	<acme:menu-suboption code="master.menu.anonymous.favourite-link3" action="https://www.github.com/"/>
         	<acme:menu-suboption code="master.menu.anonymous.favourite-link2" action="http://soymotor.com/"/>
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
-			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
-		</acme:menu-option>
-
-		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
-			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
-		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.anonymous.functionalities" access="isAnonymous()">
-			<acme:menu-suboption code="master.menu.anonymous.announcement.list" action="/anonymous/announcement/list"/>
+        	<acme:menu-suboption code="master.menu.anonymous.announcement.list" action="/anonymous/announcement/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.companyRecords.list" action="/anonymous/company-record/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.companyRecords.listTop" action="/anonymous/company-record/list-top"/>
 			<acme:menu-suboption code="master.menu.anonymous.investorRecords.list" action="/anonymous/investor-record/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.investorRecords.listTop" action="/anonymous/investor-record/list-top"/>
-    	</acme:menu-option>
+		</acme:menu-option>
+		
+		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
+			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="master.menu.provider.requests.list" action="/provider/request/list"/>
+		</acme:menu-option>
 
-		<acme:menu-option code="master.menu.authenticated.functionalities" access="isAuthenticated()&&!hasRole('Administrator')&&!hasRole('Consumer')&&!hasRole('Provider')&&!hasRole('Employer')&&!hasRole('Auditor')&&!hasRole('Worker')&&!hasRole('Sponsor')">
+		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
+			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="master.menu.consumer.offers.list" action="/consumer/offer/list"/>
+		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.authenticated.functionalities" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.companyRecords.list" action="/authenticated/company-record/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.investorRecords.list" action="/authenticated/investor-record/list"/>
@@ -51,24 +50,6 @@
 			<acme:menu-suboption code="master.menu.authenticated.jobs.list" action="/authenticated/job/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.messageThread.listMine" action="/authenticated/message-thread/list_mine"/>
    			<acme:menu-suboption code="master.menu.authenticated.auditorRequest.create" action="/authenticated/auditor-request/create"/>
-    	</acme:menu-option>
-    	
-    	<acme:menu-option code="master.menu.provider.functionalities" access="hasRole('Provider')">
-			<acme:menu-suboption code="master.menu.provider.announcement.list" action="/authenticated/announcement/list"/>
-			<acme:menu-suboption code="master.menu.provider.companyRecords.list" action="/authenticated/company-record/list"/>
-			<acme:menu-suboption code="master.menu.provider.investorRecords.list" action="/authenticated/investor-record/list"/>
-			<acme:menu-suboption code="master.menu.provider.requests.list" action="/provider/request/list"/>
-			<acme:menu-suboption code="master.menu.provider.offers.list" action="/authenticated/offer/list"/>
-			<acme:menu-suboption code="master.menu.provider.challenges.list" action="/authenticated/challenge/list"/>
-    	</acme:menu-option>
-    	
-    	<acme:menu-option code="master.menu.consumer.functionalities" access="hasRole('Consumer')">
-			<acme:menu-suboption code="master.menu.consumer.announcement.list" action="/authenticated/announcement/list"/>
-			<acme:menu-suboption code="master.menu.consumer.companyRecords.list" action="/authenticated/company-record/list"/>
-			<acme:menu-suboption code="master.menu.consumer.investorRecords.list" action="/authenticated/investor-record/list"/>
-			<acme:menu-suboption code="master.menu.consumer.requests.list" action="/authenticated/request/list"/>
-			<acme:menu-suboption code="master.menu.consumer.offers.list" action="/consumer/offer/list"/>
-			<acme:menu-suboption code="master.menu.consumer.challenges.list" action="/authenticated/challenge/list"/>
     	</acme:menu-option>
     	
     	<acme:menu-option code="master.menu.employer.functionalities" access="hasRole('Employer')">
@@ -120,6 +101,8 @@
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update" access="hasRole('Consumer')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-worker" action="/authenticated/worker/create" access="!hasRole('Worker')"/>
 			<acme:menu-suboption code="master.menu.user-account.worker" action="/authenticated/worker/update" access="hasRole('Worker')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-sponsor" action="/authenticated/sponsor/create" access="!hasRole('Sponsor')"/>
+			<acme:menu-suboption code="master.menu.user-account.sponsor" action="/authenticated/sponsor/update" access="hasRole('Sponsor')"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>

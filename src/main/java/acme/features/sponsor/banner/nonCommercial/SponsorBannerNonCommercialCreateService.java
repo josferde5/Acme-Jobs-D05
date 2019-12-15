@@ -1,12 +1,12 @@
 
 package acme.features.sponsor.banner.nonCommercial;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.banners.NonCommercial;
 import acme.entities.roles.Sponsor;
-import acme.features.sponsor.banner.SponsorRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -17,8 +17,7 @@ public class SponsorBannerNonCommercialCreateService implements AbstractCreateSe
 
 	@Autowired
 	SponsorBannerNonCommercialRepository repository;
-	@Autowired
-	SponsorRepository					sponsorRepository;
+
 
 	@Override
 	public boolean authorise(final Request<NonCommercial> request) {
@@ -52,7 +51,7 @@ public class SponsorBannerNonCommercialCreateService implements AbstractCreateSe
 
 		NonCommercial result;
 		result = new NonCommercial();
-		result.setSponsor(this.sponsorRepository.getOneById(request.getPrincipal().getActiveRoleId()));
+		result.setSponsor(this.repository.getSponsorById(request.getPrincipal().getActiveRoleId()));
 
 		return result;
 	}
@@ -62,6 +61,19 @@ public class SponsorBannerNonCommercialCreateService implements AbstractCreateSe
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		String stringTarget = "";
+		int stringOccurrences = 0;
+		for (String s : this.repository.findCustomParameters().getSpamWordsEn().split("[,]")) {
+			stringTarget += s.trim();
+			stringOccurrences = StringUtils.countMatches(entity.getSlogan(), stringTarget);
+		}
+		for (String s : this.repository.findCustomParameters().getSpamWordsSp().split("[,]")) {
+			stringTarget = s.trim();
+			stringOccurrences += StringUtils.countMatches(entity.getSlogan(), stringTarget);
+		}
+		boolean condition = (double) stringOccurrences / entity.getSlogan().split("[ \n]").length * 100 < this.repository.findCustomParameters().getThreshold();
+		errors.state(request, condition, "slogan", "sponsor.banner.commercial.form.spam");
 
 	}
 
