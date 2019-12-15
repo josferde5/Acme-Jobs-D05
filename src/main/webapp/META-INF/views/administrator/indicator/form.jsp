@@ -36,6 +36,18 @@
 			<canvas id="canvas4"></canvas>
 		</div>
 	</div>
+	
+	<div class="container-fluid row">
+		<div class="container-fluid col-md-8 col-lg-6">
+			<canvas id="canvas5"></canvas>
+		</div>
+		<div class="container-fluid col-md-8 col-lg-6">
+			<canvas id="canvas6"></canvas>
+		</div>
+		<div class="container-fluid col-md-8 col-lg-6">
+			<canvas id="canvas7"></canvas>
+		</div>
+	</div>
 	<br>
 
 	<acme:form-return code="administrator.indicators.form.button.return" />
@@ -191,6 +203,172 @@ $(document).ready(function() {
 	context = canvas.getContext("2d");
 	new Chart(context, {
 		type : "pie",
+		data : data,
+		options : options
+	});
+});
+
+$(document).ready(function() {
+	var data = {
+
+    labels: [ <jstl:forEach 
+			    var="map" 
+			    items="${pendingApplicationsPerDayLastFourMonths}">
+			    		 "${map.key}",
+			   </jstl:forEach> 
+			],
+    datasets: [{
+    	fill: false,
+        label: "Pending applications",
+        data: [ <jstl:forEach 
+			    var="map" 
+			    items="${pendingApplicationsPerDayLastFourMonths}">
+			    		 ${map.value},
+			   </jstl:forEach> ],
+		borderColor: '#fe8b36',
+		backgroundColor: '#fe8b36',
+		lineTension: 0
+    
+     }]
+}
+	
+var options = {
+		fill: false,
+	    responsive: true,
+	    legend : { display : true },
+	    scales : { 
+	    	xAxes: [ { 
+	    		type: 'time',
+	    		display: true
+	    	}],
+	    	yAxes : [ { 
+	        	ticks : { 
+	            	beginAtZero: true
+	        },
+	        display: true
+	    	}]
+	    },
+	    title : { 
+	    	display : true,
+	    	text : "Pending applications per day"
+	    }
+	};
+
+	var canvas, context;
+	canvas = document.getElementById("canvas5");
+	context = canvas.getContext("2d");
+	new Chart(context, {
+		type : "line",
+		data : data,
+		options : options
+	});
+});
+
+$(document).ready(function() {
+	var data = {
+
+    labels: [ <jstl:forEach 
+			    var="map" 
+			    items="${acceptedApplicationsPerDayLastFourMonths}">
+			    		 "${map.key}",
+			   </jstl:forEach> 
+			],
+    datasets: [{
+    	fill: false,
+        label: "Accepted applications",
+        data: [ <jstl:forEach 
+			    	var="map" 
+			    	items="${acceptedApplicationsPerDayLastFourMonths}">
+			    		 ${map.value},
+			   		</jstl:forEach> ],
+		borderColor: '#fe8b36',
+		backgroundColor: '#fe8b36',
+    
+     }]
+}
+	
+var options = {
+		fill: false,
+	    responsive: true,
+	    legend : { display : true },
+	    scales : { 
+	    	xAxes: [ { 
+	    		type: 'time',
+	    		display: true
+	    	}],
+	    	yAxes : [ { 
+	        	ticks : { 
+	            	beginAtZero: true
+	        },
+	        display: true
+	    	}]
+	    },
+	    title : { 
+	    	display : true,
+	    	text : "Accepted applications per day"
+	    }
+	};
+
+	var canvas, context;
+	canvas = document.getElementById("canvas6");
+	context = canvas.getContext("2d");
+	new Chart(context, {
+		type : "line",
+		data : data,
+		options : options
+	});
+});
+
+$(document).ready(function() {
+	var data = {
+
+    labels: [ <jstl:forEach 
+			    var="map" 
+			    items="${rejectedApplicationsPerDayLastFourMonths}">
+			    		 "${map.key}",
+			   </jstl:forEach> 
+			],
+    datasets: [{
+    	fill: false,
+        label: "Rejected applications",
+        data: [ <jstl:forEach 
+			    	var="map" 
+			    	items="${rejectedApplicationsPerDayLastFourMonths}">
+			    		 ${map.value},
+			   		</jstl:forEach> ],
+		borderColor: '#fe8b36',
+		backgroundColor: '#fe8b36',
+    
+     }]
+}
+	
+var options = {
+		fill: false,
+	    responsive: true,
+	    legend : { display : true },
+	    scales : { 
+	    	xAxes: [ { 
+	    		type: 'time',
+	    		display: true
+	    	}],
+	    	yAxes : [ { 
+	        	ticks : { 
+	            	beginAtZero: true
+	        },
+	        display: true
+	    	}]
+	    },
+	    title : { 
+	    	display : true,
+	    	text : "Rejected applications per day"
+	    }
+	};
+
+	var canvas, context;
+	canvas = document.getElementById("canvas7");
+	context = canvas.getContext("2d");
+	new Chart(context, {
+		type : "line",
 		data : data,
 		options : options
 	});
