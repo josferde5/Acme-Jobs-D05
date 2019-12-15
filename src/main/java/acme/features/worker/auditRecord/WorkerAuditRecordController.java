@@ -1,5 +1,5 @@
 
-package acme.features.auditor.auditRecordDraft;
+package acme.features.worker.auditRecord;
 
 import javax.annotation.PostConstruct;
 
@@ -8,29 +8,26 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.entities.auditRecords.AuditRecord;
-import acme.entities.roles.Auditor;
+import acme.entities.roles.Worker;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/auditor/audit-record-draft/")
-public class AuditorAuditRecordDraftController extends AbstractController<Auditor, AuditRecord> {
+@RequestMapping("/worker/audit-record/")
+public class WorkerAuditRecordController extends AbstractController<Worker, AuditRecord> {
 
 	@Autowired
-	private AuditorAuditRecordDraftListService		listService;
+	private WorkerAuditRecordListService	listService;
 
 	@Autowired
-	private AuditorAuditRecordDraftShowService		showService;
-
-	@Autowired
-	private AuditorAuditRecordDraftUpdateService	updateService;
+	private WorkerAuditRecordShowService	showService;
 
 
 	@PostConstruct
 	private void initialise() {
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
-		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+
 	}
 
 }

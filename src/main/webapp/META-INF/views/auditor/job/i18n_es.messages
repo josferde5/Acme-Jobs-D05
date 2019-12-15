@@ -14,3 +14,4 @@ auditor.job.form.label.descriptor.description = Descripci\u00f3n
 auditor.job.form.button.return = Regresa
 auditor.job.form.button.list.duties = Listar deberes
 auditor.job.form.button.list.auditRecords = Lista de registros de auditor\u00eda
+auditor.job.form.button.auditRecord.create = Escribir registro de auditoría

@@ -1,5 +1,5 @@
 
-package acme.features.auditor.auditRecordDraft;
+package acme.features.auditor.auditRecord;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,19 +9,26 @@ import acme.entities.roles.Auditor;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AuditorAuditRecordDraftUpdateService implements AbstractUpdateService<Auditor, AuditRecord> {
+public class AuditorAuditRecordUpdateService implements AbstractUpdateService<Auditor, AuditRecord> {
 
 	@Autowired
-	AuditorAuditRecordDraftRepository repository;
+	AuditorAuditRecordRepository repository;
 
 
 	@Override
 	public boolean authorise(final Request<AuditRecord> request) {
 		assert request != null;
-		return true;
+		boolean result;
+		int auditRecordId = request.getModel().getInteger("id");
+		AuditRecord ar = this.repository.findOneAuditRecordById(auditRecordId);
+		Auditor auditor = ar.getAuditor();
+		Principal principal = request.getPrincipal();
+		result = !ar.isFinalMode() && auditor.getUserAccount().getId() == principal.getAccountId();
+		return result;
 	}
 
 	@Override
@@ -61,7 +68,6 @@ public class AuditorAuditRecordDraftUpdateService implements AbstractUpdateServi
 	public void update(final Request<AuditRecord> request, final AuditRecord entity) {
 		assert request != null;
 		assert entity != null;
-
 		this.repository.save(entity);
 	}
 

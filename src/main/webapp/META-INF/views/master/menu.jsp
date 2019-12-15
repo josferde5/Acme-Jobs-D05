@@ -50,7 +50,6 @@
 			<acme:menu-suboption code="master.menu.authenticated.challenges.list" action="/authenticated/challenge/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.jobs.list" action="/authenticated/job/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.messageThread.listMine" action="/authenticated/message-thread/list_mine"/>
-   			<acme:menu-suboption code="master.menu.authenticated.auditorRequest.create" action="/authenticated/auditor-request/create"/>
     	</acme:menu-option>
     	
     	<acme:menu-option code="master.menu.provider.functionalities" access="hasRole('Provider')">
@@ -78,6 +77,7 @@
     	<acme:menu-option code="master.menu.auditor.functionalities" access="hasRole('Auditor')">
     		<acme:menu-suboption code="master.menu.auditor.job.listMine" action="/auditor/job/list_mine"/>
     		<acme:menu-suboption code="master.menu.auditor.job.listNotMine" action="/auditor/job/list_not_mine"/>
+    		<acme:menu-suboption code="master.menu.auditor.auditRecord.listMine" action="/auditor/audit-record/list_mine"/>
     	</acme:menu-option>
     	
     	<acme:menu-option code="master.menu.worker.functionalities" access="hasRole('Worker')">
@@ -120,6 +120,7 @@
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update" access="hasRole('Consumer')"/>
 			<acme:menu-suboption code="master.menu.user-account.become-worker" action="/authenticated/worker/create" access="!hasRole('Worker')"/>
 			<acme:menu-suboption code="master.menu.user-account.worker" action="/authenticated/worker/update" access="hasRole('Worker')"/>
+			<acme:menu-suboption code="master.menu.user-account.become-auditor" action="/authenticated/auditor-request/create" access="!hasRole('Auditor')"/>
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>

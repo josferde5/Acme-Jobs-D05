@@ -53,7 +53,6 @@ master.menu.authenticated.offers.list = Ofertas
 master.menu.authenticated.challenges.list = Retos
 master.menu.authenticated.jobs.list = Trabajos
 master.menu.authenticated.messageThread.listMine = Tus hilos
-master.menu.authenticated.auditorRequest.create = Vuelvete Auditor
 
 # master.menu.provider ###################################################
 
@@ -91,6 +90,7 @@ master.menu.employer.job.list = Trabajos
 master.menu.auditor.functionalities = Functionalidades
 master.menu.auditor.job.listMine = Trabajos para los cuales usted ha escrito un registro de auditor\u00eda
 master.menu.auditor.job.listNotMine = Trabajos para los cuales usted no ha escrito un registro de auditor\u00eda
+master.menu.auditor.auditRecord.listMine = Tus registros de auditoría no publicados
 
 # master.menu.worker ###################################################
 
@@ -130,6 +130,7 @@ master.menu.user-account.consumer = Datos de consumidor
 master.menu.user-account.become-consumer = Hazte consumidor
 master.menu.user-account.become-worker = Hazte empleado
 master.menu.user-account.worker = Datos de empleado
+master.menu.user-account.become-auditor = Hazte auditor
 
 ﻿# master.footer ###############################################################
 

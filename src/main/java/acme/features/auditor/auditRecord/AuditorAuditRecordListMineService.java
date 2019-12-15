@@ -1,5 +1,5 @@
 
-package acme.features.auditor.auditRecordDraft;
+package acme.features.auditor.auditRecord;
 
 import java.util.Collection;
 
@@ -13,10 +13,10 @@ import acme.framework.components.Request;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuditorAuditRecordDraftListService implements AbstractListService<Auditor, AuditRecord> {
+public class AuditorAuditRecordListMineService implements AbstractListService<Auditor, AuditRecord> {
 
 	@Autowired
-	AuditorAuditRecordDraftRepository repository;
+	AuditorAuditRecordRepository repository;
 
 
 	@Override
@@ -31,14 +31,13 @@ public class AuditorAuditRecordDraftListService implements AbstractListService<A
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "creationMoment");
+		request.unbind(entity, model, "title", "creationMoment", "job.title");
 	}
 
 	@Override
 	public Collection<AuditRecord> findMany(final Request<AuditRecord> request) {
 		assert request != null;
-		int idJob = request.getModel().getInteger("id");
-		Collection<AuditRecord> result = this.repository.findManyAuditRecordNotFinalById(idJob);
+		Collection<AuditRecord> result = this.repository.findManyAuditRecordNotFinalById(request.getPrincipal().getActiveRoleId());
 		return result;
 	}
 

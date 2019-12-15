@@ -54,7 +54,6 @@ master.menu.authenticated.offers.list = Offers
 master.menu.authenticated.challenges.list = Challenges
 master.menu.authenticated.jobs.list = Jobs
 master.menu.authenticated.messageThread.listMine = Your message threads
-master.menu.authenticated.auditorRequest.create = Become an Auditor
 
 # master.menu.provider ###################################################
 
@@ -92,6 +91,7 @@ master.menu.employer.job.list = Jobs
 master.menu.auditor.functionalities = Functionalities
 master.menu.auditor.job.listMine = Jobs for which you have written an Audit Record
 master.menu.auditor.job.listNotMine = Jobs for which you have not written an Audit Record
+master.menu.auditor.auditRecord.listMine = Your draft audit records
 
 # master.menu.worker ###################################################
 
@@ -129,6 +129,7 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.become-worker = Become a worker
 master.menu.user-account.worker = Worker data
+master.menu.user-account.become-auditor = Become a auditor
 
 # master.footer ###############################################################
 

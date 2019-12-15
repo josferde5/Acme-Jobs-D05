@@ -41,14 +41,14 @@ public class AuditorAuditRecordCreateService implements AbstractCreateService<Au
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+		model.setAttribute("idJob", request.getModel().getInteger("idJob"));
 		request.unbind(entity, model, "title", "body", "finalMode");
-
 	}
 
 	@Override
 	public AuditRecord instantiate(final Request<AuditRecord> request) {
 		AuditRecord r = new AuditRecord();
-		Job j = this.repository.findOneJobById(request.getModel().getInteger("id"));
+		Job j = this.repository.findOneJobById(request.getModel().getInteger("idJob"));
 		Auditor a = this.repository.findOneAuditorById(request.getPrincipal().getActiveRoleId());
 		r.setAuditor(a);
 		r.setJob(j);
