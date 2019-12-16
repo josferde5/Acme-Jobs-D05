@@ -32,7 +32,7 @@
 	</jstl:if>
 	
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
-	<acme:form-textbox code="employer.job.form.label.descriptor.description" path="descriptor.description" />
+	<acme:form-textarea code="employer.job.form.label.descriptor.description" path="descriptor.description" />
 	<acme:form-checkbox code="employer.job.form.label.finalMode" path="finalMode"/>
 
 	
@@ -55,7 +55,14 @@
   	<acme:form-return code="employer.job.form.button.return"/>
 </acme:form>
 <br>
+<jstl:if test="${command == 'show' and status != 'published' }">
+<acme:form>
+<acme:form-submit code="employer.duty.form.button.create" action="/employer/duty/create?id=${idDesc}" method= "get"/>
+</acme:form>
+</jstl:if>
+
 <jstl:if test="${command == 'show' }">
+<br>
 	<acme:form>
 	<acme:form-submit method="get" code="employer.job.form.button.list.duties" action="/employer/duty/list_duties?id=${idDesc}"/>
 </acme:form>
@@ -66,6 +73,18 @@
 <br>
 <acme:form>
 	<acme:form-submit method="get" code="employer.job.form.button.list.applications" action="/employer/application/list?id=${idJob}"/>
+</acme:form>
+<br>
+<acme:form>
+	<acme:form-submit method="get" code="employer.job.form.button.list_creation.applications" action="/employer/application/list_group_creation?id=${idJob}"/>
+</acme:form>
+<br>
+<acme:form>
+	<acme:form-submit method="get" code="employer.job.form.button.list_reference.applications" action="/employer/application/list_group_reference?id=${idJob}"/>
+</acme:form>
+<br>
+<acme:form>
+	<acme:form-submit method="get" code="employer.job.form.button.list_status.applications" action="/employer/application/list_group_status?id=${idJob}"/>
 </acme:form>
 </jstl:if>
 

@@ -4,6 +4,7 @@ package acme.features.employer.job;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -93,12 +94,18 @@ public class EmployerJobCreateService implements AbstractCreateService<Employer,
 			errors.state(request, isPercentUnder, "finalMode", "employer.job.error.hundred-under");
 
 			//Not considered spam
-			//			CustomisationParameters cp;
-			//			cp = this.repository.findCustomParameters();
-			//			String[] spamEn = cp.getSpamWordsEn().split(",");
-			//			String[] spamSp = cp.getSpamWordsSp().split(",");
-			//			Double thold = cp.getThreshold();
-			//			Arrays.asList(spamEn).stream().
+			String stringTarget = "";
+			int stringOccurrences = 0;
+			for (String s : this.repository.findCustomParameters().getSpamWordsEn().split("[,]")) {
+				stringTarget = s.trim();
+				stringOccurrences += StringUtils.countMatches(description.toLowerCase(), stringTarget);
+			}
+			for (String s : this.repository.findCustomParameters().getSpamWordsSp().split("[,]")) {
+				stringTarget = s.trim();
+				stringOccurrences += StringUtils.countMatches(description.toLowerCase(), stringTarget);
+			}
+			boolean condition = (double) stringOccurrences / description.split("[ \n]").length * 100 < this.repository.findCustomParameters().getThreshold();
+			errors.state(request, condition, "descriptor.description", "employer.job.error.spam");
 
 		}
 

@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.applications.Application;
+import acme.entities.customisationParameters.CustomisationParameters;
 import acme.entities.duties.Duty;
 import acme.entities.jobs.Job;
 import acme.entities.roles.Employer;
@@ -34,7 +35,7 @@ public interface EmployerJobRepository extends AbstractRepository {
 	Collection<Duty> getDutiesByJobId(int id);
 
 	//Retrieve spam
-	//	@Query("select cp from CustomisationParameters cp")
-	//	CustomisationParameters findCustomParameters();
+	@Query("select cp from CustomisationParameters cp")
+	CustomisationParameters findCustomParameters();
 
 }

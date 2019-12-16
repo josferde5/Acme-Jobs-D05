@@ -65,8 +65,9 @@ public class EmployerDutyDeleteService implements AbstractDeleteService<Employer
 	public void delete(final Request<Duty> request, final Duty entity) {
 		assert request != null;
 		assert entity != null;
-		int id = request.getModel().getInteger("id4");
-		Descriptor descriptor = this.repository.findDescriptorById(id);
+		int id = request.getModel().getInteger("id");
+		int idDescriptor = this.repository.findDescriptorIDbyDutyId(id);
+		Descriptor descriptor = this.repository.findDescriptorById(idDescriptor);
 		descriptor.getDuties().remove(entity);
 		this.repository.save(descriptor);
 		this.repository.delete(entity);

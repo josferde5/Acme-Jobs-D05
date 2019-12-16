@@ -7,10 +7,13 @@
 	<acme:form-textbox code="employer.application.form.label.referenceNumber" path="referenceNumber"/>
 	<acme:form-textbox code="employer.application.form.label.creationMoment" path="creationMoment" />
 	<acme:form-textbox code="employer.application.form.label.statement" path="statement" />
-	<acme:form-textbox code="employer.application.form.label.status" path="status"  />
+	<acme:form-select code="employer.application.form.label.status" path="status">
+		<acme:form-option code="ACEPTED" value="ACEPTED"/>
+		<acme:form-option code="REJECTED" value="REJECTED"/>	
+	</acme:form-select>
 	<acme:form-textarea code="employer.application.form.label.skills" path="skills" />
 	<acme:form-textarea code="employer.application.form.label.qualifications" path="qualifications"  />	
-	<acme:form-textarea code="employer.application.formt.label.justification" path="justification"/>
+	<acme:form-textarea code="employer.application.form.label.justification" path="justification"/>
 	<jstl:if test="${command == 'show' }">
 		<acme:form-submit code="employer.application.form.button.update" action="/employer/application/update"/>
 	</jstl:if>

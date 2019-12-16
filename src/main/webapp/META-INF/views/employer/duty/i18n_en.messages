@@ -8,6 +8,6 @@ employer.duty.form.label.duty.percentTime = Percent Time
 employer.duty.form.button.return = Return
 
 #Cud operations
-employer.duty.form.button.create = Create
-employer.duty.form.button.delete = Delete
+employer.duty.form.button.create = Create duty
+employer.duty.form.button.delete = Delete 
 employer.duty.form.button.update = Update

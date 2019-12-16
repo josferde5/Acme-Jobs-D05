@@ -26,7 +26,12 @@ public class AuthenticatedEmployerCreateService implements AbstractCreateService
 	@Override
 	public boolean authorise(final Request<Employer> request) {
 		assert request != null;
-		return true;
+		boolean res = true;
+		//Not be able to create other employer with the same account
+		if (this.repository.existsEmployerById(this.repository.findUserAccountIdAuthenticatedById(request.getPrincipal().getActiveRoleId())) == 1) {
+			res = false;
+		}
+		return res;
 	}
 
 	@Override

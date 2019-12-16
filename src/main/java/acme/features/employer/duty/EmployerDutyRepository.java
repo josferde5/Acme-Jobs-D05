@@ -22,4 +22,8 @@ public interface EmployerDutyRepository extends AbstractRepository {
 	@Query("select des from Descriptor des where des.id=?1")
 	Descriptor findDescriptorById(int id);
 
+	//Retrieve Descriptor id
+	@Query("select d.id from Descriptor d left join d.duties du where du.id=?1")
+	int findDescriptorIDbyDutyId(int id);
+
 }

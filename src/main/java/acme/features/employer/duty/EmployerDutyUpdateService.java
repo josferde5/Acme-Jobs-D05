@@ -65,10 +65,10 @@ public class EmployerDutyUpdateService implements AbstractUpdateService<Employer
 	public void update(final Request<Duty> request, final Duty entity) {
 		assert request != null;
 		assert entity != null;
-		int id = request.getModel().getInteger("id4");
-		Descriptor descriptor = this.repository.findDescriptorById(id);
-		int id2 = request.getModel().getInteger("id");
-		Duty duty = this.repository.findOneById(id2);
+		int id = request.getModel().getInteger("id");
+		int idDescriptor = this.repository.findDescriptorIDbyDutyId(id);
+		Descriptor descriptor = this.repository.findDescriptorById(idDescriptor);
+		Duty duty = this.repository.findOneById(id);
 		descriptor.getDuties().remove(duty);
 		descriptor.getDuties().add(entity);
 		this.repository.save(descriptor);

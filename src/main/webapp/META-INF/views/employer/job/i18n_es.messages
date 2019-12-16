@@ -22,6 +22,13 @@ employer.job.form.label.update = Actualizar
 employer.job.form.label.create = Crear
 
 #Errors
-employer.job.error.applications-delete = No puede eliminar con aplicaciones 
+employer.job.error.applications-delete = No puede eliminar con candidaturas 
 employer.job.error.must-have-descriptor = Debe contener un descriptor
 employer.job.error.hundred-under = Deberes deben sumar un 100%
+employer.job.error.spam = Descripci\u00f3n considerada spam
+#Extra lists
+employer.job.form.button.list_status.applications = Listar candidaturas agrupadas por estatus
+employer.job.form.button.list_reference.applications = Listar candidaturas agrupadas por referencia
+employer.job.form.button.list_creation.applications =  Listar candidaturas agrupadas por creaci\u00f3n
+#Final Mode
+employer.job.form.label.finalMode = Publicado

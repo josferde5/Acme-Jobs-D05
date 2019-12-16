@@ -3,6 +3,7 @@ package acme.features.employer.job;
 
 import java.util.Collection;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -75,6 +76,22 @@ public class EmployerJobUpdateService implements AbstractUpdateService<Employer,
 			int aux = duties.stream().mapToInt(x -> new Integer(x.getPercentTime().replaceAll("%", ""))).sum();
 			Boolean isPercentUnder = aux == 100;
 			errors.state(request, isPercentUnder, "finalMode", "employer.job.error.hundred-under");
+
+			//Not considered spam
+			//Not considered spam
+			String stringTarget = "";
+			int stringOccurrences = 0;
+			for (String s : this.repository.findCustomParameters().getSpamWordsEn().split("[,]")) {
+				stringTarget = s.trim();
+				stringOccurrences += StringUtils.countMatches(entity.getDescriptor().getDescription().toLowerCase(), stringTarget);
+			}
+			for (String s : this.repository.findCustomParameters().getSpamWordsSp().split("[,]")) {
+				stringTarget = s.trim();
+				stringOccurrences += StringUtils.countMatches(entity.getDescriptor().getDescription().toLowerCase(), stringTarget);
+			}
+			boolean condition = (double) stringOccurrences / entity.getDescriptor().getDescription().split("[ \n]").length * 100 < this.repository.findCustomParameters().getThreshold();
+			errors.state(request, condition, "descriptor.description", "employer.job.error.spam");
+
 		}
 
 	}
