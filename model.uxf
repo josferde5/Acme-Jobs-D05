@@ -152,9 +152,9 @@ bg=yellow</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>544</x>
-      <y>104</y>
+      <y>80</y>
       <w>176</w>
-      <h>168</h>
+      <h>192</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 CustomCommand
@@ -169,6 +169,8 @@ CustomCommand
 + LIST_USERS_THREAD
 + ADD_USER_THREAD
 + DELETE_USER_THREAD
++ ACCEPT
++ REJECT
 
 bg=orange</panel_attributes>
     <additional_attributes/>
