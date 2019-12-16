@@ -37,7 +37,7 @@ public class AuthenticatedAuthenticatedAddUserListService implements AbstractLis
 		Collection<Authenticated> users;
 		Principal principal;
 
-		threadId = request.getModel().getInteger("id");
+		threadId = request.getModel().getInteger("threadId");
 		thread = this.threadRepository.findOneById(threadId);
 		users = thread.getUsers();
 		principal = request.getPrincipal();
@@ -50,7 +50,7 @@ public class AuthenticatedAuthenticatedAddUserListService implements AbstractLis
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-
+		model.setAttribute("threadId", 646);
 		request.unbind(entity, model, "userAccount.username", "identity.name", "identity.surname");
 
 	}
@@ -62,7 +62,7 @@ public class AuthenticatedAuthenticatedAddUserListService implements AbstractLis
 		Collection<Authenticated> result;
 		int threadId;
 
-		threadId = request.getModel().getInteger("id");
+		threadId = request.getModel().getInteger("threadId");
 		result = this.repository.findManyAllNotInThread(threadId);
 		return result;
 	}
@@ -74,7 +74,7 @@ public class AuthenticatedAuthenticatedAddUserListService implements AbstractLis
 
 		HttpSession session;
 		int threadId;
-		threadId = request.getModel().getInteger("id");
+		threadId = request.getModel().getInteger("threadId");
 		session = request.getServletRequest().getSession();
 		session.setAttribute("add", "true");
 		session.setAttribute("threadId", threadId);
