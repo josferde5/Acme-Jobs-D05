@@ -6,7 +6,6 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.messageThreads.MessageThread;
 import acme.entities.messages.Message;
 import acme.features.authenticated.messageThread.AuthenticatedMessageThreadRepository;
 import acme.framework.components.Model;
@@ -31,13 +30,11 @@ public class AuthenticatedMessageListThreadService implements AbstractListServic
 
 		boolean result;
 		int threadId;
-		MessageThread thread;
 		Collection<Authenticated> users;
 		Principal principal;
 
 		threadId = request.getModel().getInteger("id");
-		thread = this.threadRepository.findOneById(threadId);
-		users = thread.getUsers();
+		users = this.repository.findManyUsersByThread(threadId);
 		principal = request.getPrincipal();
 		result = users.stream().map(x -> x.getId()).anyMatch(x -> x == principal.getActiveRoleId());
 		return result;

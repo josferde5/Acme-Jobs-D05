@@ -4,7 +4,7 @@
 <%@ taglib prefix="acme" tagdir="/WEB-INF/tags" %>
 
 <acme:list>
-	<acme:list-column code="authenticated.messageThread.users.list.label.username" path="userAccount.username" width="20%" />
-	<acme:list-column code="authenticated.messageThread.users.list.label.name" path="identity.name" width="20%" />
-	<acme:list-column code="authenticated.messageThread.users.list.label.surname" path="identity.surname" width="40%" />
+	<acme:list-column code="authenticated.userInThread.list.label.username" path="authenticated.userAccount.username" width="20%" />
+	<acme:list-column code="authenticated.userInThread.list.label.name" path="authenticated.identity.name" width="20%" />
+	<acme:list-column code="authenticated.userInThread.list.label.surname" path="authenticated.identity.surname" width="40%" />
 </acme:list>
