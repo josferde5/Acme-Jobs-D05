@@ -1,13 +1,9 @@
 #ListView
-employer.duty.form.label.duty.title = T\u00edtulo
-employer.duty.form.label.duty.percentTime = Porcentaje de tiempo
+worker.duty.form.label.duty.title = T\u00edtulo
+worker.duty.form.label.duty.percentTime = Porcentaje de tiempo
 #FormView
-employer.duty.form.label.duty.title = T\u00edtulo
-employer.duty.form.label.duty.description = Descripci\u00f3n del deber
-employer.duty.form.label.duty.percentTime = Porcentaje de tiempo
-employer.duty.form.button.return = Regresa
+worker.duty.form.label.duty.title = T\u00edtulo
+worker.duty.form.label.duty.description = Descripci\u00f3n del deber
+worker.duty.form.label.duty.percentTime = Porcentaje de tiempo
+worker.duty.form.button.return = Regresa
 
-#Cud operations
-employer.duty.form.button.create = Crea deber
-employer.duty.form.button.delete = Elimina
-employer.duty.form.button.update = Actualiza

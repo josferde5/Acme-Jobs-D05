@@ -21,23 +21,10 @@ request.setAttribute("id3", id3);
 
 %>
 <acme:form>
-	<acme:form-textbox code="employer.duty.form.label.duty.title" path="title" />
-	<acme:form-textarea code="employer.duty.form.label.duty.description" path="description"/>
-	<acme:form-textbox code="employer.duty.form.label.duty.percentTime" path="percentTime" />
-	
-	<jstl:if test="${command == 'create'}">
-	
-		<acme:form-submit code="employer.duty.form.button.create" action="/employer/duty/create?id=${id3}"/>
-	
-	</jstl:if>
-	<jstl:if test="${command == 'show' }">
-		<acme:form-submit code="employer.duty.form.button.delete" action="/employer/duty/delete"/>
-	</jstl:if>
-	<jstl:if test="${command == 'show' }">
-		<acme:form-submit code="employer.duty.form.button.update" action="/employer/duty/update"/>
-	</jstl:if>
+	<acme:form-textbox code="worker.duty.form.label.duty.title" path="title" />
+	<acme:form-textarea code="worker.duty.form.label.duty.description" path="description"/>
+	<acme:form-textbox code="worker.duty.form.label.duty.percentTime" path="percentTime" />
 	
 	
-		
-  	<acme:form-return code="employer.job.form.button.return"/>
+  	<acme:form-return code="worker.job.form.button.return"/>
 </acme:form>

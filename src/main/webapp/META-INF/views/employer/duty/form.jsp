@@ -30,10 +30,10 @@ request.setAttribute("id3", id3);
 		<acme:form-submit code="employer.duty.form.button.create" action="/employer/duty/create?id=${id3}"/>
 	
 	</jstl:if>
-	<jstl:if test="${command == 'show' }">
+	<jstl:if test="${command == 'show' and status == 'false' }">
 		<acme:form-submit code="employer.duty.form.button.delete" action="/employer/duty/delete"/>
 	</jstl:if>
-	<jstl:if test="${command == 'show' }">
+	<jstl:if test="${command == 'show' and status == 'false'}">
 		<acme:form-submit code="employer.duty.form.button.update" action="/employer/duty/update"/>
 	</jstl:if>
 	

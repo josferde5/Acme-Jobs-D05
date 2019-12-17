@@ -30,6 +30,10 @@ public class EmployerDutyShowService implements AbstractShowService<Employer, Du
 		assert model != null;
 
 		request.unbind(entity, model, "title", "description", "percentTime");
+		int id = entity.getId();
+		int idDescriptor = this.repository.findDescriptorIDbyDutyId(id);
+		boolean status = this.repository.findStatusJobByDescriptorId(idDescriptor);
+		model.setAttribute("status", status);
 
 	}
 
