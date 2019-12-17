@@ -27,6 +27,13 @@
        drop 
        foreign key FK_clqcq9lyspxdxcp6o4f3vkelj;
 
+    alter table `auditor_request` 
+       drop 
+       foreign key `FKjonb5lt00rmb868h6gjdjh1to`;
+
+    alter table `authenticated` 
+       drop 
+       foreign key FK_h52w0f3wjoi68b63wv9vwon57;
 
     alter table `commercial` 
        drop 
@@ -56,14 +63,6 @@
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
-    alter table `message_thread_authenticated` 
-       drop 
-       foreign key `FKsnymblhgu3dixq3t2qhptr4x2`;
-
-    alter table `message_thread_authenticated` 
-       drop 
-       foreign key `FKjb0tx79q4dpibs3mnkp6wfqvf`;
-
     alter table `message_thread_message` 
        drop 
        foreign key `FKka0a2jm3m6obl7wa6586cqyp4`;
@@ -84,6 +83,14 @@
        drop 
        foreign key FK_20xk0ev32hlg96kqynl6laie2;
 
+    alter table `user_in_thread` 
+       drop 
+       foreign key `FKm1jfnd156atd70id3r1x14lea`;
+
+    alter table `user_in_thread` 
+       drop 
+       foreign key `FKiyt6dn1i7o94045st5aai7adx`;
+
     alter table `worker` 
        drop 
        foreign key FK_l5q1f33vs2drypmbdhpdgwfv3;
@@ -100,6 +107,21 @@
 
     drop table if exists `auditor`;
 
+    drop table if exists `auditor_request`;
+
+    drop table if exists `authenticated`;
+
+    drop table if exists `challenge`;
+
+    drop table if exists `commercial`;
+
+    drop table if exists `company_record`;
+
+    drop table if exists `consumer`;
+
+    drop table if exists `customisation_parameters`;
+
+    drop table if exists `descriptor`;
 
     drop table if exists `descriptor_duty`;
 
@@ -116,8 +138,6 @@
     drop table if exists `message`;
 
     drop table if exists `message_thread`;
-
-    drop table if exists `message_thread_authenticated`;
 
     drop table if exists `message_thread_message`;
 
@@ -138,6 +158,8 @@
     drop table if exists `sponsor`;
 
     drop table if exists `user_account`;
+
+    drop table if exists `user_in_thread`;
 
     drop table if exists `worker`;
 

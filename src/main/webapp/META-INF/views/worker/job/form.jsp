@@ -18,6 +18,8 @@
 <%
 	String idJob= String.format("%d", request.getAttribute("jobId"));
 	request.setAttribute("idJob", idJob);
+	String idDesc= String.format("%d", request.getAttribute("descriptorId"));
+	request.setAttribute("idDesc", idDesc);
 %>
 
 <acme:form>
@@ -34,4 +36,8 @@
 <br>
 <acme:form>
 	<acme:form-submit method="get" code="worker.job.form.button.list.auditRecords" action="/worker/audit-record/list?id=${idJob}"/>
+</acme:form>
+<br>
+<acme:form>
+	<acme:form-submit method="get" code="employer.job.form.button.list.duties" action="/worker/duty/list_duties?id=${idDesc}"/>
 </acme:form>

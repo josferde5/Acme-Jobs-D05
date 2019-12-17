@@ -2,6 +2,7 @@
 employer.job.list.label.reference = Referencia
 employer.job.list.label.title = T\u00edtulo
 employer.job.list.label.deadline = Fecha l\u00edmite
+employer.job.list.label.status = Estado
 
 #FormView
 employer.job.form.label.reference  = Referencia
