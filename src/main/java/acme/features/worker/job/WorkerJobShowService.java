@@ -29,7 +29,7 @@ public class WorkerJobShowService implements AbstractShowService<Worker, Job> {
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "status", "descriptor.description");
+		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "status", "descriptor.description", "id");
 		//Collection<Duty> dutiess = entity.getDescriptor().getDuties();
 		int id = entity.getDescriptor().getId();
 		//		StringBuilder buffer = new StringBuilder();

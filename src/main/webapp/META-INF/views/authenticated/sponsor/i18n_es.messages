@@ -1,0 +1,6 @@
+authenticated.sponsor.sponsor.form.label.organisationName = Organizacion
+authenticated.sponsor.sponsor.form.label.creditCard = Tarjeta de credito
+
+authenticated.sponsor.sponsor.form.button.update = Actualizar
+authenticated.sponsor.sponsor.form.button.create = Crear
+authenticated.sponsor.sponsor.form.button.return = Volver

@@ -12,8 +12,6 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface SponsorBannerRepository extends AbstractRepository {
 
-	//	@Query("select a from Banner a")
-	//	Collection<Banner> findManyAll();
 	@Query("select a from Banner a where a.sponsor.id = ?1")
 	Collection<Banner> findManyAll(int sponsorId);
 

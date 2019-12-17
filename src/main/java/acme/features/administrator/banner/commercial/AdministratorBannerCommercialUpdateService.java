@@ -1,6 +1,7 @@
 
 package acme.features.administrator.banner.commercial;
 
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -60,6 +61,19 @@ public class AdministratorBannerCommercialUpdateService implements AbstractUpdat
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		String stringTarget = "";
+		int stringOccurrences = 0;
+		for (String s : this.repository.findCustomParameters().getSpamWordsEn().split("[,]")) {
+			stringTarget += s.trim().toLowerCase();
+			stringOccurrences = StringUtils.countMatches(entity.getSlogan().toLowerCase(), stringTarget);
+		}
+		for (String s : this.repository.findCustomParameters().getSpamWordsSp().split("[,]")) {
+			stringTarget = s.trim().toLowerCase();
+			stringOccurrences += StringUtils.countMatches(entity.getSlogan().toLowerCase(), stringTarget);
+		}
+		boolean condition = (double) stringOccurrences / entity.getSlogan().split("[ \n]").length * 100 < this.repository.findCustomParameters().getThreshold();
+		errors.state(request, condition, "slogan", "sponsor.banner.commercial.form.spam");
 
 	}
 
