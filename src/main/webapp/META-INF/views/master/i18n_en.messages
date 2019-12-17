@@ -57,29 +57,15 @@ master.menu.authenticated.messageThread.listMine = Your message threads
 
 # master.menu.provider ###################################################
 
-master.menu.provider = Provider
-master.menu.provider.favourite-link = Favourite link
-
 master.menu.provider.functionalities = Provider
-master.menu.provider.announcement.list = Announcement
-master.menu.provider.companyRecords.list = Company records
-master.menu.provider.investorRecords.list = Investor records
+master.menu.provider.favourite-link = Favourite link
 master.menu.provider.requests.list = Requests
-master.menu.provider.offers.list = Offers
-master.menu.provider.challenges.list = Challenges
 
 # master.menu.consumer ###################################################
 
-master.menu.consumer = Consumer
+master.menu.consumer.functionalities = Consumer
 master.menu.consumer.favourite-link = Favourite link
-
-master.menu.consumer.functionalities = Functionalities
-master.menu.consumer.announcement.list = Announcement
-master.menu.consumer.companyRecords.list = Company records
-master.menu.consumer.investorRecords.list = Investor records
-master.menu.consumer.requests.list = Requests
 master.menu.consumer.offers.list = Offers
-master.menu.consumer.challenges.list = Challenges
 
 # master.menu.employer ###################################################
 
@@ -98,6 +84,7 @@ master.menu.auditor.auditRecord.listMine = Your draft audit records
 master.menu.worker.functionalities = Worker
 master.menu.worker.application.listMine = Your job applications
 master.menu.worker.job.list = Available jobs
+
 # master.menu.sponsor ###################################################
 
 master.menu.sponsor.functionalities = Sponsor
@@ -105,19 +92,17 @@ master.menu.sponsor.banner.listMine = Your banners
 
 # master.menu.administrator ###################################################
 
-master.menu.administrator = Administrator
-master.menu.administrator.user-accounts = User accounts
-master.menu.administrator.shutdown = Shut down
-
-master.menu.administrator.functionalities = Functionalities
+master.menu.administrator.functionalities = Administrator
 master.menu.administrator.announcement.list = Announcements
 master.menu.administrator.challenge.list = Challenges
 master.menu.administrator.investorRecord.list = Investor Records
 master.menu.administrator.companyRecord.list = Company Records
 master.menu.administrator.banner.list = Banners
 master.menu.administrator.auditorRequest.list = Auditor Requests
-master.menu.administrator.customisationParameters.display = Customisation Parameters
+master.menu.administrator.customisationParameters.display = Customization Parameters
 master.menu.administrator.indicators.display = Indicators
+master.menu.administrator.user-accounts = User accounts
+master.menu.administrator.shutdown = Shut down
 
 # master.menu.user-account ####################################################
 

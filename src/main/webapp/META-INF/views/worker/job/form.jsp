@@ -39,5 +39,5 @@
 </acme:form>
 <br>
 <acme:form>
-	<acme:form-submit method="get" code="employer.job.form.button.list.duties" action="/worker/duty/list_duties?id=${idDesc}"/>
+	<acme:form-submit method="get" code="worker.job.form.button.list.duties" action="/worker/duty/list_duties?id=${idDesc}"/>
 </acme:form>

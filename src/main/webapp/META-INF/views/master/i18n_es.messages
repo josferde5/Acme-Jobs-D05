@@ -56,29 +56,15 @@ master.menu.authenticated.messageThread.listMine = Tus hilos
 
 # master.menu.provider ###################################################
 
-master.menu.provider = Proveedor
+master.menu.provider.functionalities = Proveedor
 master.menu.provider.favourite-link = Enlace favorito
-
-master.menu.provider.functionalities = Funcionalidades
-master.menu.provider.announcement.list = Anuncios
-master.menu.provider.companyRecords.list = Registros de compa\u00f1\u00edas
-master.menu.provider.investorRecords.list = Registros de inversores
 master.menu.provider.requests.list = Solicitudes
-master.menu.provider.offers.list = Ofertas
-master.menu.provider.challenges.list = Retos
 
 # master.menu.consumer ###################################################
 
-master.menu.consumer = Consumidor
+master.menu.consumer.functionalities = Consumidor
 master.menu.consumer.favourite-link = Enlace favorito
-
-master.menu.consumer.functionalities = Funcionalidades
-master.menu.consumer.announcement.list = Anuncios
-master.menu.consumer.companyRecords.list = Registros de compa\u00f1\u00edas
-master.menu.consumer.investorRecords.list = Registros de inversores
-master.menu.consumer.requests.list = Solicitudes
 master.menu.consumer.offers.list = Ofertas
-master.menu.consumer.challenges.list = Retos
 
 # master.menu.employer ###################################################
 
@@ -98,7 +84,6 @@ master.menu.worker.functionalities = Empleado
 master.menu.worker.application.listMine = Tus solicitudes de trabajo
 master.menu.worker.job.list = Trabajos disponibles
 
-
 # master.menu.sponsor ###################################################
 
 master.menu.sponsor.functionalities = Patrocinador
@@ -106,11 +91,7 @@ master.menu.sponsor.banner.listMine = Tus banners
 
 # master.menu.administrator ###################################################
 
-master.menu.administrator = Administrador
-master.menu.administrator.user-accounts = Cuentas de usuario
-master.menu.administrator.shutdown = Parar el sistema
-
-master.menu.administrator.functionalities = Funcionalidades
+master.menu.administrator.functionalities = Administrador
 master.menu.administrator.announcement.list = Anuncios
 master.menu.administrator.challenge.list = Retos
 master.menu.administrator.investorRecord.list = Registros de inversores
@@ -119,6 +100,8 @@ master.menu.administrator.banner.list = Banners
 master.menu.administrator.auditorRequest.list = Peticiones de auditores
 master.menu.administrator.customisationParameters.display = Par\u00e1metros de personalizaci\u00f3n
 master.menu.administrator.indicators.display = Estad\u00edsticas
+master.menu.administrator.user-accounts = Cuentas de usuario
+master.menu.administrator.shutdown = Parar el sistema
 
 # master.menu.user-account ####################################################
 

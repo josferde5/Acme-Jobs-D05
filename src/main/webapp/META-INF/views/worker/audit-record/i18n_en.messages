@@ -1,10 +1,10 @@
 #ListView
-employer.auditRecord.list.label.title = Title
-employer.auditRecord.list.label.creationMoment = Creation moment
+worker.auditRecord.list.label.title = Title
+worker.auditRecord.list.label.creationMoment = Creation moment
 
 #FormView
-employer.auditRecord.form.label.title = Title
-employer.auditRecord.form.label.creationMoment = Creation moment
-employer.auditRecord.form.label.body = Body
-employer.auditRecord.form.label.status = Status
-employer.auditRecord.form.button.return = Return
+worker.auditRecord.form.label.title = Title
+worker.auditRecord.form.label.creationMoment = Creation moment
+worker.auditRecord.form.label.body = Body
+worker.auditRecord.form.label.status = Status
+worker.auditRecord.form.button.return = Return

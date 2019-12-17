@@ -29,16 +29,6 @@
 			<acme:menu-suboption code="master.menu.anonymous.investorRecords.list" action="/anonymous/investor-record/list"/>
 			<acme:menu-suboption code="master.menu.anonymous.investorRecords.listTop" action="/anonymous/investor-record/list-top"/>
 		</acme:menu-option>
-		
-		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">
-			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
-			<acme:menu-suboption code="master.menu.provider.requests.list" action="/provider/request/list"/>
-		</acme:menu-option>
-
-		<acme:menu-option code="master.menu.consumer" access="hasRole('Consumer')">
-			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
-			<acme:menu-suboption code="master.menu.consumer.offers.list" action="/consumer/offer/list"/>
-		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.authenticated.functionalities" access="isAuthenticated()">
 			<acme:menu-suboption code="master.menu.authenticated.announcement.list" action="/authenticated/announcement/list"/>
@@ -50,6 +40,16 @@
 			<acme:menu-suboption code="master.menu.authenticated.jobs.list" action="/authenticated/job/list"/>
 			<acme:menu-suboption code="master.menu.authenticated.messageThread.listMine" action="/authenticated/message-thread/list_mine"/>
     	</acme:menu-option>
+    	
+    	<acme:menu-option code="master.menu.provider.functionalities" access="hasRole('Provider')">
+			<acme:menu-suboption code="master.menu.provider.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="master.menu.provider.requests.list" action="/provider/request/list"/>
+		</acme:menu-option>
+
+		<acme:menu-option code="master.menu.consumer.functionalities" access="hasRole('Consumer')">
+			<acme:menu-suboption code="master.menu.consumer.favourite-link" action="http://www.example.com/"/>
+			<acme:menu-suboption code="master.menu.consumer.offers.list" action="/consumer/offer/list"/>
+		</acme:menu-option>
     	
     	<acme:menu-option code="master.menu.employer.functionalities" access="hasRole('Employer')">
     		<acme:menu-suboption code="master.menu.employer.job.list" action="/employer/job/list_mine"/>
@@ -80,13 +80,10 @@
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.customisationParameters.display" action="/administrator/customisation-parameters/display"/>
 			<acme:menu-suboption code="master.menu.administrator.indicators.display" action="/administrator/indicator/display"/>
-    	</acme:menu-option>
-	
-		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
-			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
-			<acme:menu-separator/>
+    		<acme:menu-separator/>
+    		<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list"/>
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown"/>
-		</acme:menu-option>
+    	</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>
