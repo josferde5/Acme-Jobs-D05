@@ -22,7 +22,11 @@ public class AuthenticatedAuditorRequestCreateService implements AbstractCreateS
 	@Override
 	public boolean authorise(final Request<AuditorRequest> request) {
 		assert request != null;
-		return true;
+		boolean res = true;
+		if (this.repository.existsAuditorById(this.repository.findUserAccountIdAuthenticatedById(request.getPrincipal().getActiveRoleId())) == 1) {
+			res = false;
+		}
+		return res;
 	}
 
 	@Override

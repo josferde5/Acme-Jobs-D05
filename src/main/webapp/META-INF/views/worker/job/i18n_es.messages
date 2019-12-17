@@ -15,3 +15,4 @@ worker.job.form.button.return = Regresa
 worker.job.form.button.list.duties = Listar deberes
 worker.job.form.button.list.auditRecords = Lista de registros de auditor\u00eda
 worker.job.form.button.list.createApplication = Enviar solicitud
+worker.job.form.button.list.auditRecords = Lista de registros de auditoría

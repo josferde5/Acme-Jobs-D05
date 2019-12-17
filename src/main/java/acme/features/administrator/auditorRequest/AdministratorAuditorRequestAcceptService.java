@@ -14,7 +14,7 @@ import acme.framework.entities.UserAccount;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class AdministratorAuditorRequestUpdateService implements AbstractUpdateService<Administrator, AuditorRequest> {
+public class AdministratorAuditorRequestAcceptService implements AbstractUpdateService<Administrator, AuditorRequest> {
 
 	@Autowired
 	AdministratorAuditorRequestRepository repository;

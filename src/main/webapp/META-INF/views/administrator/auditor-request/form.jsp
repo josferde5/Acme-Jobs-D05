@@ -20,7 +20,7 @@
 	<acme:form-textbox code="administrator.auditorRequest.form.label.firm" path="firm"/>
 	<acme:form-textbox code="administrator.auditorRequest.form.label.responsibilityStatement" path="responsibilityStatement"/>
 	
-	<acme:form-submit code="administrator.auditorRequest.form.button.accept" action="/administrator/auditor-request/update"/>
-	<acme:form-submit code="administrator.auditorRequest.form.button.reject" action="/administrator/auditor-request/delete"/>
+	<acme:form-submit code="administrator.auditorRequest.form.button.accept" action="/administrator/auditor-request/accept"/>
+	<acme:form-submit code="administrator.auditorRequest.form.button.reject" action="/administrator/auditor-request/reject"/>
 	<acme:form-return code="administrator.auditorRequest.form.button.return"/>
 </acme:form>
