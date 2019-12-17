@@ -15,7 +15,10 @@
 	<acme:form-textbox code="worker.application.form.label.statement" path="statement" />
 	<acme:form-textarea readonly="true" code="worker.application.form.label.skills" path="skills" />
 	<acme:form-textarea readonly="true" code="worker.application.form.label.qualifications" path="qualifications" />
-	
+		
+	<jstl:if test="${status == 'REJECTED'}">
+		<acme:form-textarea readonly="true" code="worker.application.form.label.justification" path="qualificatijustificationons" />
+	</jstl:if>
 	<jstl:if test="${command == 'create'}">
 		<acme:form-hidden path="idJob" />
 	</jstl:if>

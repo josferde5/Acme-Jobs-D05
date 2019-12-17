@@ -11,3 +11,4 @@ worker.application.form.label.creationMoment = Creation moment
 worker.application.form.label.referenceNumber = Reference number
 worker.application.form.button.return = Return
 worker.application.form.button.create = Create
+worker.application.form.label.justification = Justification
