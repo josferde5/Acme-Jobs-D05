@@ -60,7 +60,7 @@ master.menu.authenticated.messageThread.listMine = Your message threads
 master.menu.provider = Provider
 master.menu.provider.favourite-link = Favourite link
 
-master.menu.provider.functionalities = Functionalities
+master.menu.provider.functionalities = Provider
 master.menu.provider.announcement.list = Announcement
 master.menu.provider.companyRecords.list = Company records
 master.menu.provider.investorRecords.list = Investor records
@@ -88,19 +88,19 @@ master.menu.employer.job.list = Jobs
 
 # master.menu.auditor ###################################################
 
-master.menu.auditor.functionalities = Functionalities
+master.menu.auditor.functionalities = Auditor
 master.menu.auditor.job.listMine = Jobs for which you have written an Audit Record
 master.menu.auditor.job.listNotMine = Jobs for which you have not written an Audit Record
 master.menu.auditor.auditRecord.listMine = Your draft audit records
 
 # master.menu.worker ###################################################
 
-master.menu.worker.functionalities = Functionalities
+master.menu.worker.functionalities = Worker
 master.menu.worker.application.listMine = Your job applications
 master.menu.worker.job.list = Available jobs
 # master.menu.sponsor ###################################################
 
-master.menu.sponsor.functionalities = Functionalities
+master.menu.sponsor.functionalities = Sponsor
 master.menu.sponsor.banner.listMine = Your banners
 
 # master.menu.administrator ###################################################

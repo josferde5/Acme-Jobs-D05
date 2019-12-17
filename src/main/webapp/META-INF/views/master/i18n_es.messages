@@ -87,21 +87,21 @@ master.menu.employer.job.list = Trabajos
 
 # master.menu.auditor ###################################################
 
-master.menu.auditor.functionalities = Functionalidades
+master.menu.auditor.functionalities = Auditor
 master.menu.auditor.job.listMine = Trabajos para los cuales usted ha escrito un registro de auditor\u00eda
 master.menu.auditor.job.listNotMine = Trabajos para los cuales usted no ha escrito un registro de auditor\u00eda
 master.menu.auditor.auditRecord.listMine = Tus registros de auditoría no publicados
 
 # master.menu.worker ###################################################
 
-master.menu.worker.functionalities = Funcionalidades
+master.menu.worker.functionalities = Empleado
 master.menu.worker.application.listMine = Tus solicitudes de trabajo
 master.menu.worker.job.list = Trabajos disponibles
 
 
 # master.menu.sponsor ###################################################
 
-master.menu.sponsor.functionalities = Funcionalidades
+master.menu.sponsor.functionalities = Patrocinador
 master.menu.sponsor.banner.listMine = Tus banners
 
 # master.menu.administrator ###################################################
