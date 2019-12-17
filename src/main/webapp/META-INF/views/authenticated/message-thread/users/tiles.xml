@@ -6,11 +6,11 @@
 	
 <tiles-definitions>
 
-	<definition name="authenticated/authenticated/list" extends="master">
+	<definition name="authenticated/user-in-thread/list" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/message-thread/users/list.jsp" />
 	</definition> 
 	
-	<definition name="authenticated/authenticated/form" extends="master">
+	<definition name="authenticated/user-in-thread/form" extends="master">
 		<put-attribute name="body" type="template" value="../authenticated/message-thread/users/form.jsp" />
 	</definition> 
 	

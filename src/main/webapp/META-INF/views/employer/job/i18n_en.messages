@@ -15,3 +15,20 @@ employer.job.form.button.return = Return
 employer.job.form.button.list.duties = List duties
 employer.job.form.button.list.auditRecords = List Audit records
 employer.job.form.button.list.applications = List applications
+
+#Cud operations
+employer.job.form.label.delete = Delete
+employer.job.form.label.update = Update
+employer.job.form.label.create = Create
+
+#Errors
+employer.job.error.applications-delete = Cannot delete with applications
+employer.job.error.must-have-descriptor = Must have descriptor
+employer.job.error.hundred-under = Duties must sum up 100%
+employer.job.error.spam = Description considered spam
+#Extra lists
+employer.job.form.button.list_status.applications = List Applications group by status
+employer.job.form.button.list_reference.applications = List Applications group by reference
+employer.job.form.button.list_creation.applications =  List Applications group by creation
+#Final Mode
+employer.job.form.label.finalMode = Published

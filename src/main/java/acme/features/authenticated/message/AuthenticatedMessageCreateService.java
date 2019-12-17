@@ -4,8 +4,10 @@ package acme.features.authenticated.message;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,8 +15,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.customisationParameters.CustomisationParameters;
 import acme.entities.messageThreads.MessageThread;
 import acme.entities.messages.Message;
-import acme.features.administrator.customisationParameters.AdministratorCustomisationParametersRepository;
-import acme.features.authenticated.messageThread.AuthenticatedMessageThreadRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.HttpMethod;
 import acme.framework.components.Model;
@@ -27,13 +27,7 @@ import acme.framework.services.AbstractCreateService;
 public class AuthenticatedMessageCreateService implements AbstractCreateService<Authenticated, Message> {
 
 	@Autowired
-	AuthenticatedMessageRepository					repository;
-
-	@Autowired
-	AuthenticatedMessageThreadRepository			threadRepository;
-
-	@Autowired
-	AdministratorCustomisationParametersRepository	cpRepository;
+	AuthenticatedMessageRepository repository;
 
 
 	@Override
@@ -42,13 +36,11 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 
 		boolean result;
 		int threadId;
-		MessageThread thread;
 		Collection<Authenticated> users;
 		Principal principal;
 
 		threadId = request.getModel().getInteger("threadId");
-		thread = this.threadRepository.findOneById(threadId);
-		users = thread.getUsers();
+		users = this.repository.findManyUsersByThread(threadId);
 		principal = request.getPrincipal();
 		result = users.stream().map(x -> x.getId()).anyMatch(x -> x == principal.getActiveRoleId());
 		return result;
@@ -100,17 +92,28 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		errors.state(request, isConfirmed, "confirmation", "authenticated.message.error.must-confirm");
 
 		CustomisationParameters cp;
-		String[] body;
-		List<String> spamWordsEn;
-		List<String> spamWordsSp;
+		String body;
+		Set<String> spamWords;
 		boolean isSpam;
 
-		cp = this.cpRepository.findCustomParameters();
+		cp = this.repository.findCustomParameters();
 
-		body = request.getModel().getString("body").split(" ");
-		spamWordsEn = Arrays.stream(cp.getSpamWordsEn().split(",")).map(x -> x.trim()).collect(Collectors.toList());
-		spamWordsSp = Arrays.stream(cp.getSpamWordsSp().split(",")).map(x -> x.trim()).collect(Collectors.toList());
-		isSpam = Arrays.stream(body).filter(x -> spamWordsEn.contains(x) || spamWordsSp.contains(x)).count() / (double) body.length * 100. > cp.getThreshold();
+		spamWords = new HashSet<>();
+		body = request.getModel().getString("body");
+		Arrays.stream(cp.getSpamWordsEn().split(",")).map(x -> x.trim()).forEach(x -> spamWords.add(x));
+		Arrays.stream(cp.getSpamWordsSp().split(",")).map(x -> x.trim()).forEach(x -> spamWords.add(x));
+
+		int count = 0;
+
+		for (String s : spamWords) {
+			Pattern p = Pattern.compile("." + s + ".", Pattern.UNICODE_CASE + Pattern.CASE_INSENSITIVE);
+			Matcher m = p.matcher(body);
+			while (m.find()) {
+				count++;
+			}
+		}
+
+		isSpam = count / (double) body.split(" ").length * 100. > cp.getThreshold();
 		errors.state(request, !isSpam, "body", "authenticated.message.error.spam");
 
 	}
@@ -130,11 +133,11 @@ public class AuthenticatedMessageCreateService implements AbstractCreateService<
 		this.repository.save(entity);
 
 		threadId = request.getModel().getInteger("threadId");
-		thread = this.threadRepository.findOneById(threadId);
+		thread = this.repository.findOneMessageThreadById(threadId);
 		messages = thread.getMessages();
 		messages.add(entity);
 		thread.setMessages(messages);
-		this.threadRepository.save(thread);
+		this.repository.save(thread);
 
 	}
 
