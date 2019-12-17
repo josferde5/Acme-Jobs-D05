@@ -2,6 +2,7 @@
 package acme.features.administrator.indicators;
 
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -61,5 +62,14 @@ public interface AdministratorIndicatorsRepository extends AbstractRepository {
 
 	@Query("select 1.0 * count(a) / (select count(b) from Application b) from Application a where a.status = acme.entities.applications.Status.REJECTED")
 	Double ratioOfRejectedApplications();
+
+	@Query("select count(a), DATE(a.creationMoment) as dateApp from Application a where a.status = acme.entities.applications.Status.PENDING and DATE(a.creationMoment) > ?1 group by DATE(a.creationMoment) order by dateApp asc")
+	Collection<Object[]> pendingApplicationsPerDayLastFourMonths(Date moment);
+
+	@Query("select count(a), DATE(a.creationMoment) as dateApp from Application a where a.status = acme.entities.applications.Status.ACEPTED and DATE(a.creationMoment) > ?1 group by DATE(a.creationMoment) order by dateApp asc")
+	Collection<Object[]> acceptedApplicationsPerDayLastFourMonths(Date moment);
+
+	@Query("select count(a), DATE(a.creationMoment) as dateApp from Application a where a.status = acme.entities.applications.Status.REJECTED and DATE(a.creationMoment) > ?1 group by DATE(a.creationMoment) order by dateApp asc")
+	Collection<Object[]> rejectedApplicationsPerDayLastFourMonths(Date moment);
 
 }
