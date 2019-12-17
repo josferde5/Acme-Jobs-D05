@@ -64,8 +64,8 @@ public class AdministratorBannerNonCommercialCreateService implements AbstractCr
 		String stringTarget = "";
 		int stringOccurrences = 0;
 		for (String s : this.repository.findCustomParameters().getSpamWordsEn().split("[,]")) {
-			stringTarget += s.trim().toLowerCase();
-			stringOccurrences = StringUtils.countMatches(entity.getSlogan().toLowerCase(), stringTarget);
+			stringTarget = s.trim().toLowerCase();
+			stringOccurrences += StringUtils.countMatches(entity.getSlogan().toLowerCase(), stringTarget);
 		}
 		for (String s : this.repository.findCustomParameters().getSpamWordsSp().split("[,]")) {
 			stringTarget = s.trim().toLowerCase();
