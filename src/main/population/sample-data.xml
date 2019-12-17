@@ -581,6 +581,7 @@
 		<property name="skills" value="Any skills" />
 		<property name="qualifications" value="Any qualifications" />
 		<property name="worker" ref="worker1Worker" />
+		<property name="justification" value=""/>
 		<property name="job" ref="job01" />
 	</bean>
 
@@ -592,6 +593,7 @@
 		<property name="skills" value="Any skills" />
 		<property name="qualifications" value="Any qualifications" />
 		<property name="worker" ref="worker2Worker" />
+		<property name="justification" value=""/>
 		<property name="job" ref="job02" />
 	</bean>
   
