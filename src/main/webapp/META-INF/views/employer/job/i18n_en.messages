@@ -2,6 +2,7 @@
 employer.job.list.label.reference = Reference
 employer.job.list.label.title = Title
 employer.job.list.label.deadline = Deadline
+employer.job.list.label.status = Status
 
 #FormView
 employer.job.form.label.reference  = Reference
@@ -20,6 +21,7 @@ employer.job.form.button.list.applications = List applications
 employer.job.form.label.delete = Delete
 employer.job.form.label.update = Update
 employer.job.form.label.create = Create
+
 
 #Errors
 employer.job.error.applications-delete = Cannot delete with applications

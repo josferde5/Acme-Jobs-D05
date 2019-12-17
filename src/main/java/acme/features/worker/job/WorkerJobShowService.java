@@ -30,24 +30,8 @@ public class WorkerJobShowService implements AbstractShowService<Worker, Job> {
 		assert model != null;
 
 		request.unbind(entity, model, "reference", "title", "deadline", "salary", "moreInfo", "status", "descriptor.description", "id");
-		//Collection<Duty> dutiess = entity.getDescriptor().getDuties();
+
 		int id = entity.getDescriptor().getId();
-		//		StringBuilder buffer = new StringBuilder();
-		//		for (Duty duty : dutiess) {
-		//			buffer.append("Duty number:");
-		//			buffer.append(duty.getId());
-		//			buffer.append("\n");
-		//			buffer.append("Description:");
-		//			buffer.append(duty.getDescription());
-		//			buffer.append("\n");
-		//			buffer.append("Title:");
-		//			buffer.append(duty.getTitle());
-		//			buffer.append("\n");
-		//			buffer.append("Time in percent:");
-		//			buffer.append(duty.getPercentTime());
-		//			buffer.append("\n");
-		//		}
-		//		model.setAttribute("duties", buffer.toString());
 		model.setAttribute("descriptorId", id);
 		int jobId = entity.getId();
 		model.setAttribute("jobId", jobId);

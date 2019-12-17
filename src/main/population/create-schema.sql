@@ -6,7 +6,90 @@
         primary key (`id`)
     ) engine=InnoDB;
 
- 
+    create table `announcement` (
+       `id` integer not null,
+        `version` integer not null,
+        `moment` datetime(6),
+        `more_info` varchar(255),
+        `text` varchar(255),
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `anonymous` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `application` (
+       `id` integer not null,
+        `version` integer not null,
+        `creation_moment` datetime(6),
+        `justification` varchar(255),
+        `qualifications` varchar(255),
+        `reference_number` varchar(255),
+        `skills` varchar(255),
+        `statement` varchar(255),
+        `status` varchar(255),
+        `job_id` integer not null,
+        `worker_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `audit_record` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `creation_moment` datetime(6),
+        `final_mode` bit not null,
+        `title` varchar(255),
+        `auditor_id` integer not null,
+        `job_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `auditor` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `firm` varchar(255),
+        `responsibility_statement` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `auditor_request` (
+       `id` integer not null,
+        `version` integer not null,
+        `firm` varchar(255),
+        `responsibility_statement` varchar(255),
+        `authenticated_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `authenticated` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `challenge` (
+       `id` integer not null,
+        `version` integer not null,
+        `deadline` datetime(6),
+        `description` varchar(255),
+        `goal_bronze` varchar(255),
+        `goal_gold` varchar(255),
+        `goal_silver` varchar(255),
+        `reward_bronze_amount` double precision,
+        `reward_bronze_currency` varchar(255),
+        `reward_gold_amount` double precision,
+        `reward_gold_currency` varchar(255),
+        `reward_silver_amount` double precision,
+        `reward_silver_currency` varchar(255),
+        `title` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -138,11 +221,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `message_thread_authenticated` (
-       `message_thread_id` integer not null,
-        `users_id` integer not null
-    ) engine=InnoDB;
-
     create table `message_thread_message` (
        `message_thread_id` integer not null,
         `messages_id` integer not null
@@ -246,6 +324,14 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `user_in_thread` (
+       `id` integer not null,
+        `version` integer not null,
+        `authenticated_id` integer,
+        `message_thread_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `worker` (
        `id` integer not null,
         `version` integer not null,
@@ -312,6 +398,24 @@
        foreign key (`job_id`) 
        references `job` (`id`);
 
+    alter table `auditor` 
+       add constraint FK_clqcq9lyspxdxcp6o4f3vkelj 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `auditor_request` 
+       add constraint `FKjonb5lt00rmb868h6gjdjh1to` 
+       foreign key (`authenticated_id`) 
+       references `authenticated` (`id`);
+
+    alter table `authenticated` 
+       add constraint FK_h52w0f3wjoi68b63wv9vwon57 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
+
+    alter table `commercial` 
+       add constraint FK_tk5yvuytfoa0dgtibahrxwwkd 
+       foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
 
     alter table `consumer` 
@@ -344,16 +448,6 @@
        foreign key (`employer_id`) 
        references `employer` (`id`);
 
-    alter table `message_thread_authenticated` 
-       add constraint `FKsnymblhgu3dixq3t2qhptr4x2` 
-       foreign key (`users_id`) 
-       references `authenticated` (`id`);
-
-    alter table `message_thread_authenticated` 
-       add constraint `FKjb0tx79q4dpibs3mnkp6wfqvf` 
-       foreign key (`message_thread_id`) 
-       references `message_thread` (`id`);
-
     alter table `message_thread_message` 
        add constraint `FKka0a2jm3m6obl7wa6586cqyp4` 
        foreign key (`messages_id`) 
@@ -378,6 +472,16 @@
        add constraint FK_20xk0ev32hlg96kqynl6laie2 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `user_in_thread` 
+       add constraint `FKm1jfnd156atd70id3r1x14lea` 
+       foreign key (`authenticated_id`) 
+       references `authenticated` (`id`);
+
+    alter table `user_in_thread` 
+       add constraint `FKiyt6dn1i7o94045st5aai7adx` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
 
     alter table `worker` 
        add constraint FK_l5q1f33vs2drypmbdhpdgwfv3 
