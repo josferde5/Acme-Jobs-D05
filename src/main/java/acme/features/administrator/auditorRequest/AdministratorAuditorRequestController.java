@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import acme.components.CustomCommand;
 import acme.entities.auditorRequests.AuditorRequest;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
@@ -17,9 +18,9 @@ import acme.framework.entities.Administrator;
 public class AdministratorAuditorRequestController extends AbstractController<Administrator, AuditorRequest> {
 
 	@Autowired
-	AdministratorAuditorRequestUpdateService	updateService;
+	AdministratorAuditorRequestAcceptService	acceptService;
 	@Autowired
-	AdministratorAuditorRequestDeleteService	deleteService;
+	AdministratorAuditorRequestRejectService	rejectService;
 	@Autowired
 	AdministratorAuditorRequestListService		listService;
 	@Autowired
@@ -28,8 +29,8 @@ public class AdministratorAuditorRequestController extends AbstractController<Ad
 
 	@PostConstruct
 	private void initialise() {
-		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
-		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
+		super.addCustomCommand(CustomCommand.ACCEPT, BasicCommand.UPDATE, this.acceptService);
+		super.addCustomCommand(CustomCommand.REJECT, BasicCommand.DELETE, this.rejectService);
 		super.addBasicCommand(BasicCommand.LIST, this.listService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
 	}

@@ -27,9 +27,6 @@
        drop 
        foreign key FK_clqcq9lyspxdxcp6o4f3vkelj;
 
-    alter table `authenticated` 
-       drop 
-       foreign key FK_h52w0f3wjoi68b63wv9vwon57;
 
     alter table `commercial` 
        drop 
@@ -103,19 +100,6 @@
 
     drop table if exists `auditor`;
 
-    drop table if exists `authenticated`;
-
-    drop table if exists `challenge`;
-
-    drop table if exists `commercial`;
-
-    drop table if exists `company_record`;
-
-    drop table if exists `consumer`;
-
-    drop table if exists `customisation_parameters`;
-
-    drop table if exists `descriptor`;
 
     drop table if exists `descriptor_duty`;
 

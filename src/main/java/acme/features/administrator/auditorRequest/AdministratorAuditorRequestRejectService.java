@@ -12,7 +12,7 @@ import acme.framework.entities.Administrator;
 import acme.framework.services.AbstractDeleteService;
 
 @Service
-public class AdministratorAuditorRequestDeleteService implements AbstractDeleteService<Administrator, AuditorRequest> {
+public class AdministratorAuditorRequestRejectService implements AbstractDeleteService<Administrator, AuditorRequest> {
 
 	@Autowired
 	AdministratorAuditorRequestRepository repository;

@@ -40,5 +40,9 @@
 <acme:form>
 	<acme:form-submit method="get" code="auditor.job.form.button.list.auditRecords" action="/auditor/audit-record/list?id=${idJob}"/>
 </acme:form>
+<br>
+<acme:form>
+	<acme:form-submit method="get" code="auditor.job.form.button.auditRecord.create" action="/auditor/audit-record/create?idJob=${idJob}"/>
+</acme:form>
 
 

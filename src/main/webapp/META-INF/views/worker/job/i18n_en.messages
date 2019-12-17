@@ -15,3 +15,4 @@ worker.job.form.button.return = Return
 worker.job.form.button.list.duties = List Duties
 worker.job.form.button.list.auditRecords = List Audit records
 worker.job.form.button.list.createApplication = Create application
+worker.job.form.button.list.auditRecords = List of Audit records

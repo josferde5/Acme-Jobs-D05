@@ -27,3 +27,8 @@
 	<acme:form-submit method="get" code="worker.job.form.button.list.createApplication" action="/worker/application/create?idJob=${id}"/>
   	<acme:form-return code="worker.job.form.button.return"/>
 </acme:form>
+
+<br>
+<acme:form>
+	<acme:form-submit method="get" code="worker.job.form.button.list.auditRecords" action="/worker/audit-record/list?id=${idJob}"/>
+</acme:form>

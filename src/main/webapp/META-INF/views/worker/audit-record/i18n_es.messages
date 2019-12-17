@@ -1,0 +1,10 @@
+#ListView
+employer.auditRecord.list.label.title = T\u00edtulo
+employer.auditRecord.list.label.creationMoment = Fecha de creaci\u00f3n
+
+#FormView
+employer.auditRecord.form.label.title = T\u00edtulo
+employer.auditRecord.form.label.creationMoment = Fecha de creaci\u00f3n
+employer.auditRecord.form.label.body = Cuerpo
+employer.auditRecord.form.label.status = Estado
+employer.auditRecord.form.button.return = Volver

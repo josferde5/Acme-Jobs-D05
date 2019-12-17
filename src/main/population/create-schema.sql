@@ -6,80 +6,7 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `announcement` (
-       `id` integer not null,
-        `version` integer not null,
-        `moment` datetime(6),
-        `more_info` varchar(255),
-        `text` varchar(255),
-        `title` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `anonymous` (
-       `id` integer not null,
-        `version` integer not null,
-        `user_account_id` integer,
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `application` (
-       `id` integer not null,
-        `version` integer not null,
-        `creation_moment` datetime(6),
-        `qualifications` varchar(255),
-        `reference_number` varchar(255),
-        `skills` varchar(255),
-        `statement` varchar(255),
-        `status` varchar(255),
-        `job_id` integer not null,
-        `worker_id` integer not null,
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `audit_record` (
-       `id` integer not null,
-        `version` integer not null,
-        `body` varchar(255),
-        `creation_moment` datetime(6),
-        `final_mode` bit not null,
-        `title` varchar(255),
-        `auditor_id` integer not null,
-        `job_id` integer not null,
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `auditor` (
-       `id` integer not null,
-        `version` integer not null,
-        `user_account_id` integer,
-        `firm` varchar(255),
-        `responsibility_statement` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `authenticated` (
-       `id` integer not null,
-        `version` integer not null,
-        `user_account_id` integer,
-        primary key (`id`)
-    ) engine=InnoDB;
-
-    create table `challenge` (
-       `id` integer not null,
-        `version` integer not null,
-        `deadline` datetime(6),
-        `description` varchar(255),
-        `goal_bronze` varchar(255),
-        `goal_gold` varchar(255),
-        `goal_silver` varchar(255),
-        `reward_bronze_amount` double precision,
-        `reward_bronze_currency` varchar(255),
-        `reward_gold_amount` double precision,
-        `reward_gold_currency` varchar(255),
-        `reward_silver_amount` double precision,
-        `reward_silver_currency` varchar(255),
-        `title` varchar(255),
+ 
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -385,19 +312,6 @@
        foreign key (`job_id`) 
        references `job` (`id`);
 
-    alter table `auditor` 
-       add constraint FK_clqcq9lyspxdxcp6o4f3vkelj 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
-
-    alter table `authenticated` 
-       add constraint FK_h52w0f3wjoi68b63wv9vwon57 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
-
-    alter table `commercial` 
-       add constraint FK_tk5yvuytfoa0dgtibahrxwwkd 
-       foreign key (`sponsor_id`) 
        references `sponsor` (`id`);
 
     alter table `consumer` 

@@ -37,8 +37,8 @@
 <jstl:if test="${command != 'create'}">
 	<acme:form>
 		<acme:form-submit method="get" code="authenticated.messageThread.form.button.listMessages" action='/authenticated/message/list_thread?id=${threadId}' />
-		<acme:form-submit method="get" code="authenticated.messageThread.form.button.listUsers" action="/authenticated/authenticated/list_users_thread?id=${threadId}" />
-		<acme:form-submit method="get" code="authenticated.messageThread.form.button.addUser" action="/authenticated/authenticated/add_user_list?id=${threadId}" />
+		<acme:form-submit method="get" code="authenticated.messageThread.form.button.listUsers" action="/authenticated/user-in-thread/list?threadId=${threadId}" />
+		<acme:form-submit method="get" code="authenticated.messageThread.form.button.addUser" action="/authenticated/user-in-thread/create?threadId=${threadId}" />
 		<acme:form-submit method="get" code="authenticated.messageThread.form.button.postMessage" action="/authenticated/message/create?threadId=${threadId}" />
 	</acme:form>
 </jstl:if>

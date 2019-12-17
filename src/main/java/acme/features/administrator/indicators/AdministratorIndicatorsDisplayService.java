@@ -3,6 +3,7 @@ package acme.features.administrator.indicators;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -42,7 +43,8 @@ public class AdministratorIndicatorsDisplayService implements AbstractShowServic
 
 		request.unbind(entity, model, "totalNumberOfAnnouncements", "totalNumberOfCompanyRecords", "totalNumberOfInvestorRecords", "minimumRewardsOfActiveRequests", "maximumRewardsOfActiveRequests", "averageRewardsOfActiveRequests",
 			"standardDeviationOfActiveRequests", "minimumRewardsOfActiveOffers", "maximumRewardsOfActiveOffers", "averageRewardsOfActiveOffers", "standardDeviationOfActiveOffers", "companiesBySector", "investorsBySector", "averageNumberOfJobsPerEmployer",
-			"averageNumberOfApplicationsPerEmployer", "averageNumberOfApplicationsPerWorker", "ratioOfDraftJobs", "ratioOfPublishedJobs", "ratioOfPendingApplications", "ratioOfAcceptedApplications", "ratioOfRejectedApplications");
+			"averageNumberOfApplicationsPerEmployer", "averageNumberOfApplicationsPerWorker", "ratioOfDraftJobs", "ratioOfPublishedJobs", "ratioOfPendingApplications", "ratioOfAcceptedApplications", "ratioOfRejectedApplications",
+			"pendingApplicationsPerDayLastFourMonths", "acceptedApplicationsPerDayLastFourMonths", "rejectedApplicationsPerDayLastFourMonths");
 
 	}
 
@@ -95,7 +97,38 @@ public class AdministratorIndicatorsDisplayService implements AbstractShowServic
 		result.setRatioOfPendingApplications(this.repository.ratioOfPendingApplications());
 		result.setRatioOfAcceptedApplications(this.repository.ratioOfAcceptedApplications());
 		result.setRatioOfRejectedApplications(this.repository.ratioOfRejectedApplications());
+
+		//D05
+		Date d = new Date(System.currentTimeMillis() - 10512011520L); //The date 4 months ago
+
+		Map<Date, Integer> pendingAppsLastFourMonthsMap;
+		Collection<Object[]> pendingAppsLastFourMonths;
+		pendingAppsLastFourMonths = this.repository.pendingApplicationsPerDayLastFourMonths(d);
+		pendingAppsLastFourMonthsMap = this.appsByDate(pendingAppsLastFourMonths);
+		result.setPendingApplicationsPerDayLastFourMonths(pendingAppsLastFourMonthsMap);
+
+		Map<Date, Integer> acceptedAppsLastFourMonthsMap;
+		Collection<Object[]> acceptedAppsLastFourMonths;
+		acceptedAppsLastFourMonths = this.repository.acceptedApplicationsPerDayLastFourMonths(d);
+		acceptedAppsLastFourMonthsMap = this.appsByDate(acceptedAppsLastFourMonths);
+		result.setAcceptedApplicationsPerDayLastFourMonths(acceptedAppsLastFourMonthsMap);
+
+		Map<Date, Integer> rejectedAppsLastFourMonthsMap;
+		Collection<Object[]> rejectedAppsLastFourMonths;
+		rejectedAppsLastFourMonths = this.repository.rejectedApplicationsPerDayLastFourMonths(d);
+		rejectedAppsLastFourMonthsMap = this.appsByDate(rejectedAppsLastFourMonths);
+		result.setRejectedApplicationsPerDayLastFourMonths(rejectedAppsLastFourMonthsMap);
 		return result;
+	}
+
+	private Map<Date, Integer> appsByDate(final Collection<Object[]> appsLastFourMonths) {
+		Map<Date, Integer> res = new HashMap<>();
+		for (Object[] o : appsLastFourMonths) {
+			Date d = (Date) o[1];
+			Integer i = ((Long) o[0]).intValue();
+			res.put(d, i);
+		}
+		return res;
 	}
 
 	private Map<String, Integer> createCompaniesBySec(final Collection<CompanyRecord> companyRecords) {
