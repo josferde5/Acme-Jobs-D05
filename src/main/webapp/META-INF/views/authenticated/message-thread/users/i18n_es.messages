@@ -1,0 +1,16 @@
+authenticated.userInThread.list.label.username = Nombre de usuario
+authenticated.userInThread.list.label.name = Nombre
+authenticated.userInThread.list.label.surname = Apellidos
+
+authenticated.userInThread.form.label.username = Nombre de usuario:
+authenticated.userInThread.form.label.name = Nombre:
+authenticated.userInThread.form.label.surname = Apellidos:
+authenticated.userInThread.form.label.user = Usuario:
+
+authenticated.userInThread.form.button.add = A\u00f1adir usuario
+authenticated.userInThread.form.button.delete = Eliminar usuario
+authenticated.userInThread.form.button.return = Volver
+
+error.user-not-in-thread = El usuario seleccionado no está incluido en el hilo
+error.user-in-thread = El usuario seleccionado ya está incluido en el hilo
+error.user-not-exists = The user selected does not exist

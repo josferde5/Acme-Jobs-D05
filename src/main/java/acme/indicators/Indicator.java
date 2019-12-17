@@ -2,6 +2,7 @@
 package acme.indicators;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.Map;
 
 import acme.framework.datatypes.Money;
@@ -42,5 +43,11 @@ public class Indicator implements Serializable {
 	Double						ratioOfPendingApplications;
 	Double						ratioOfAcceptedApplications;
 	Double						ratioOfRejectedApplications;
+
+	//Attributes (D05)
+
+	Map<Date, Integer>			pendingApplicationsPerDayLastFourMonths;
+	Map<Date, Integer>			acceptedApplicationsPerDayLastFourMonths;
+	Map<Date, Integer>			rejectedApplicationsPerDayLastFourMonths;
 
 }

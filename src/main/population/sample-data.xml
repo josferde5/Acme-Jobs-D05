@@ -693,12 +693,6 @@
 				<ref bean="message02" />
 			</list>
 		</property>
-		<property name="users">
-			<list>
-				<ref bean="authAuthenticated01" />
-				<ref bean="authAuthenticated03" />
-			</list>
-		</property>
 	</bean>
 	
 	<bean name="messageThread02" class="acme.entities.messageThreads.MessageThread">
@@ -709,12 +703,26 @@
 				<ref bean="message03" />
 			</list>
 		</property>
-		<property name="users">
-			<list>
-				<ref bean="authAuthenticated01" />
-				<ref bean="authAuthenticated02" />
-			</list>
-		</property>
+	</bean>
+	
+	<bean name="userInThread01" class="acme.entities.usersInThread.UserInThread">
+		<property name="authenticated" ref="authAuthenticated01" />
+		<property name="messageThread" ref="messageThread01" />
+	</bean>
+	
+	<bean name="userInThread02" class="acme.entities.usersInThread.UserInThread">
+		<property name="authenticated" ref="authAuthenticated03" />
+		<property name="messageThread" ref="messageThread01" />
+	</bean>
+	
+	<bean name="userInThread03" class="acme.entities.usersInThread.UserInThread">
+		<property name="authenticated" ref="authAuthenticated01" />
+		<property name="messageThread" ref="messageThread02" />
+	</bean>
+	
+	<bean name="userInThread04" class="acme.entities.usersInThread.UserInThread">
+		<property name="authenticated" ref="authAuthenticated02" />
+		<property name="messageThread" ref="messageThread02" />
 	</bean>
 	
 		<bean name="sponsor1UserAccount" class="acme.framework.entities.UserAccount">

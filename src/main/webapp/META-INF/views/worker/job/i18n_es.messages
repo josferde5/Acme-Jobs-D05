@@ -1,0 +1,17 @@
+#ListView
+worker.job.list.label.reference = Referencia
+worker.job.list.label.title = T\u00edtulo
+worker.job.list.label.deadline = Fecha l\u00edmite
+
+#FormView
+worker.job.form.label.reference  = Referencia
+worker.job.form.label.title = T\u00edtulo
+worker.job.form.label.deadline = Fecha l\u00edmite
+worker.job.form.label.salary = Salario
+worker.job.form.label.status = Estado
+worker.job.form.label.moreInfo = M\u00e1s informaci\u00f3n
+worker.job.form.label.descriptor.description = Descripci\u00f3n
+worker.job.form.button.return = Regresa
+worker.job.form.button.list.duties = Listar deberes
+worker.job.form.button.list.auditRecords = Lista de registros de auditor\u00eda
+worker.job.form.button.list.createApplication = Enviar solicitud

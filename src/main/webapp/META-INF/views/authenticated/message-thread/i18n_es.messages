@@ -1,7 +1,12 @@
 authenticated.messageThread.list.label.title = T\u00edtulo
 authenticated.messageThread.list.label.moment = Momento
+authenticated.messageThread.list.button.create = Crear hilo
 
 authenticated.messageThread.form.label.title = T\u00edtulo:
 authenticated.messageThread.form.label.moment = Momento:
 authenticated.messageThread.form.button.return = Volver
+authenticated.messageThread.form.button.create = Crear
 authenticated.messageThread.form.button.listMessages = Listar mensajes
+authenticated.messageThread.form.button.listUsers = Listar usuarios
+authenticated.messageThread.form.button.addUser = A\u00f1adir usuario
+authenticated.messageThread.form.button.postMessage = Publicar mensaje

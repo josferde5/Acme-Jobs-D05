@@ -54,6 +54,7 @@ master.menu.authenticated.offers.list = Offers
 master.menu.authenticated.challenges.list = Challenges
 master.menu.authenticated.jobs.list = Jobs
 master.menu.authenticated.messageThread.listMine = Your message threads
+master.menu.authenticated.auditorRequest.create = Become an Auditor
 
 # master.menu.provider ###################################################
 
@@ -96,7 +97,7 @@ master.menu.auditor.job.listNotMine = Jobs for which you have not written an Aud
 
 master.menu.worker.functionalities = Functionalities
 master.menu.worker.application.listMine = Your job applications
-
+master.menu.worker.job.list = Available jobs
 # master.menu.sponsor ###################################################
 
 master.menu.sponsor.functionalities = Functionalities
@@ -114,6 +115,7 @@ master.menu.administrator.challenge.list = Challenges
 master.menu.administrator.investorRecord.list = Investor Records
 master.menu.administrator.companyRecord.list = Company Records
 master.menu.administrator.banner.list = Banners
+master.menu.administrator.auditorRequest.list = Auditor Requests
 master.menu.administrator.customisationParameters.display = Customisation Parameters
 master.menu.administrator.indicators.display = Indicators
 
@@ -127,6 +129,9 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.employer = Employer data
 master.menu.user-account.become-employer = Become a employer
+master.menu.user-account.worker = Worker data
+master.menu.user-account.become-worker = Become a worker
+
 # master.footer ###############################################################
 
 master.footer.title.about = About us
