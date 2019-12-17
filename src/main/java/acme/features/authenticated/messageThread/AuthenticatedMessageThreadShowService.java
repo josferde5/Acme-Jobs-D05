@@ -26,13 +26,11 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 
 		boolean result;
 		int threadId;
-		MessageThread thread;
 		Collection<Authenticated> users;
 		Principal principal;
 
 		threadId = request.getModel().getInteger("id");
-		thread = this.repository.findOneById(threadId);
-		users = thread.getUsers();
+		users = this.repository.findManyUsersByThread(threadId);
 		principal = request.getPrincipal();
 		result = users.stream().map(x -> x.getId()).anyMatch(x -> x == principal.getActiveRoleId());
 		return result;

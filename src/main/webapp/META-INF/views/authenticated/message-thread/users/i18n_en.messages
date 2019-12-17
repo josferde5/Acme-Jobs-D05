@@ -1,11 +1,16 @@
-authenticated.messageThread.users.list.label.username = Username
-authenticated.messageThread.users.list.label.name = Name
-authenticated.messageThread.users.list.label.surname = Surname
+authenticated.userInThread.list.label.username = Username
+authenticated.userInThread.list.label.name = Name
+authenticated.userInThread.list.label.surname = Surname
 
-authenticated.messageThread.users.form.label.username = Username:
-authenticated.messageThread.users.form.label.name = Name:
-authenticated.messageThread.users.form.label.surname = Surname:
+authenticated.userInThread.form.label.username = Username:
+authenticated.userInThread.form.label.name = Name:
+authenticated.userInThread.form.label.surname = Surname:
+authenticated.userInThread.form.label.user = User:
 
-authenticated.messageThread.users.form.button.add = Add user
-authenticated.messageThread.users.form.button.delete = Delete user
-authenticated.messageThread.users.form.button.return = Return
+authenticated.userInThread.form.button.add = Add user
+authenticated.userInThread.form.button.delete = Delete user
+authenticated.userInThread.form.button.return = Return
+
+error.user-not-in-thread = The user chosen is not in the thread
+error.user-in-thread = The user chosen is already in the thread
+error.user-not-exists = The user selected does not exist
