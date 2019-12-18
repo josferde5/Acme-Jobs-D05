@@ -64,12 +64,12 @@ public interface AdministratorIndicatorsRepository extends AbstractRepository {
 	Double ratioOfRejectedApplications();
 
 	@Query("select count(a), DATE(a.creationMoment) as dateApp from Application a where a.status = acme.entities.applications.Status.PENDING and DATE(a.creationMoment) > ?1 group by DATE(a.creationMoment) order by dateApp asc")
-	Collection<Object[]> pendingApplicationsPerDayLastFourMonths(Date moment);
+	Collection<Object[]> pendingApplicationsPerDayLastFourWeeks(Date moment);
 
 	@Query("select count(a), DATE(a.creationMoment) as dateApp from Application a where a.status = acme.entities.applications.Status.ACEPTED and DATE(a.creationMoment) > ?1 group by DATE(a.creationMoment) order by dateApp asc")
-	Collection<Object[]> acceptedApplicationsPerDayLastFourMonths(Date moment);
+	Collection<Object[]> acceptedApplicationsPerDayLastFourWeeks(Date moment);
 
 	@Query("select count(a), DATE(a.creationMoment) as dateApp from Application a where a.status = acme.entities.applications.Status.REJECTED and DATE(a.creationMoment) > ?1 group by DATE(a.creationMoment) order by dateApp asc")
-	Collection<Object[]> rejectedApplicationsPerDayLastFourMonths(Date moment);
+	Collection<Object[]> rejectedApplicationsPerDayLastFourWeeks(Date moment);
 
 }

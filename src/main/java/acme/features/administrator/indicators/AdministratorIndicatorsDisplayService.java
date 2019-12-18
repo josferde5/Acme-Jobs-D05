@@ -1,12 +1,19 @@
 
 package acme.features.administrator.indicators;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.SortedSet;
+import java.util.TreeMap;
+import java.util.TreeSet;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +51,7 @@ public class AdministratorIndicatorsDisplayService implements AbstractShowServic
 		request.unbind(entity, model, "totalNumberOfAnnouncements", "totalNumberOfCompanyRecords", "totalNumberOfInvestorRecords", "minimumRewardsOfActiveRequests", "maximumRewardsOfActiveRequests", "averageRewardsOfActiveRequests",
 			"standardDeviationOfActiveRequests", "minimumRewardsOfActiveOffers", "maximumRewardsOfActiveOffers", "averageRewardsOfActiveOffers", "standardDeviationOfActiveOffers", "companiesBySector", "investorsBySector", "averageNumberOfJobsPerEmployer",
 			"averageNumberOfApplicationsPerEmployer", "averageNumberOfApplicationsPerWorker", "ratioOfDraftJobs", "ratioOfPublishedJobs", "ratioOfPendingApplications", "ratioOfAcceptedApplications", "ratioOfRejectedApplications",
-			"pendingApplicationsPerDayLastFourMonths", "acceptedApplicationsPerDayLastFourMonths", "rejectedApplicationsPerDayLastFourMonths");
+			"pendingApplicationsPerDayLastFourWeeks", "acceptedApplicationsPerDayLastFourWeeks", "rejectedApplicationsPerDayLastFourWeeks");
 
 	}
 
@@ -99,35 +106,92 @@ public class AdministratorIndicatorsDisplayService implements AbstractShowServic
 		result.setRatioOfRejectedApplications(this.repository.ratioOfRejectedApplications());
 
 		//D05
-		Date d = new Date(System.currentTimeMillis() - 10512011520L); //The date 4 months ago
+		Date d = new Date(System.currentTimeMillis() - 2419200000L); //The date 4 weeks ago
 
-		Map<Date, Integer> pendingAppsLastFourMonthsMap;
-		Collection<Object[]> pendingAppsLastFourMonths;
-		pendingAppsLastFourMonths = this.repository.pendingApplicationsPerDayLastFourMonths(d);
-		pendingAppsLastFourMonthsMap = this.appsByDate(pendingAppsLastFourMonths);
-		result.setPendingApplicationsPerDayLastFourMonths(pendingAppsLastFourMonthsMap);
+		Map<String, Integer> pendingAppsLastFourWeeksMap;
+		Collection<Object[]> pendingAppsLastFourWeeks;
+		pendingAppsLastFourWeeks = this.repository.pendingApplicationsPerDayLastFourWeeks(d);
+		pendingAppsLastFourWeeksMap = this.appsByDate(pendingAppsLastFourWeeks);
+		result.setPendingApplicationsPerDayLastFourWeeks(pendingAppsLastFourWeeksMap);
 
-		Map<Date, Integer> acceptedAppsLastFourMonthsMap;
-		Collection<Object[]> acceptedAppsLastFourMonths;
-		acceptedAppsLastFourMonths = this.repository.acceptedApplicationsPerDayLastFourMonths(d);
-		acceptedAppsLastFourMonthsMap = this.appsByDate(acceptedAppsLastFourMonths);
-		result.setAcceptedApplicationsPerDayLastFourMonths(acceptedAppsLastFourMonthsMap);
+		Map<String, Integer> acceptedAppsLastFourWeeksMap;
+		Collection<Object[]> acceptedAppsLastFourWeeks;
+		acceptedAppsLastFourWeeks = this.repository.acceptedApplicationsPerDayLastFourWeeks(d);
+		acceptedAppsLastFourWeeksMap = this.appsByDate(acceptedAppsLastFourWeeks);
+		result.setAcceptedApplicationsPerDayLastFourWeeks(acceptedAppsLastFourWeeksMap);
 
-		Map<Date, Integer> rejectedAppsLastFourMonthsMap;
-		Collection<Object[]> rejectedAppsLastFourMonths;
-		rejectedAppsLastFourMonths = this.repository.rejectedApplicationsPerDayLastFourMonths(d);
-		rejectedAppsLastFourMonthsMap = this.appsByDate(rejectedAppsLastFourMonths);
-		result.setRejectedApplicationsPerDayLastFourMonths(rejectedAppsLastFourMonthsMap);
+		Map<String, Integer> rejectedAppsLastFourWeeksMap;
+		Collection<Object[]> rejectedAppsLastFourWeeks;
+		rejectedAppsLastFourWeeks = this.repository.rejectedApplicationsPerDayLastFourWeeks(d);
+		rejectedAppsLastFourWeeksMap = this.appsByDate(rejectedAppsLastFourWeeks);
+		result.setRejectedApplicationsPerDayLastFourWeeks(rejectedAppsLastFourWeeksMap);
 		return result;
 	}
 
-	private Map<Date, Integer> appsByDate(final Collection<Object[]> appsLastFourMonths) {
-		Map<Date, Integer> res = new HashMap<>();
-		for (Object[] o : appsLastFourMonths) {
+	private Map<String, Integer> appsByDate(final Collection<Object[]> appsLastFourWeeks) {
+		Comparator<String> cmpS = Comparator.naturalOrder();
+		Map<String, Integer> res = new TreeMap<>(cmpS);
+		Comparator<Date> cmpDate = Comparator.naturalOrder();
+		SortedSet<Date> ss = new TreeSet<>(cmpDate);
+
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+
+		for (Object[] o : appsLastFourWeeks) {
 			Date d = (Date) o[1];
+			ss.add(d);
+			String dateParsed = formatter.format(d);
 			Integer i = ((Long) o[0]).intValue();
-			res.put(d, i);
+			res.put(dateParsed, i);
 		}
+
+		Iterator<Date> it = ss.iterator();
+
+		Date dateComparing = new Date(System.currentTimeMillis() - 2419200000L);
+		Calendar cDateComparing = Calendar.getInstance();
+		cDateComparing.setTime(dateComparing);
+
+		boolean first = true;
+		Calendar c = Calendar.getInstance();
+		int i;
+
+		//From 28 days ago to the last date
+
+		while (it.hasNext()) {
+			Date d = it.next();
+			c.setTime(d);
+			i = c.get(Calendar.DAY_OF_YEAR) - cDateComparing.get(Calendar.DAY_OF_YEAR);
+			i = i > 28 ? cDateComparing.get(Calendar.YEAR) % 4 == 0 ? 366 - i : 365 - i : i;
+
+			if (first) {
+				first = false;
+			}
+			long millis = cDateComparing.getTimeInMillis();
+			for (int j = 0; j < i; j++) {
+				Date toAdd = new Date(millis);
+				String dateParsed = formatter.format(toAdd);
+				res.put(dateParsed, 0);
+				millis += 86400000L;
+			}
+			millis = c.getTimeInMillis() + 86400000L;
+			cDateComparing.setTimeInMillis(millis);
+			formatter.setCalendar(cDateComparing);
+		}
+
+		//From the last date to today
+
+		Date today = new Date(System.currentTimeMillis() - 1);
+		c.setTime(today);
+		i = c.get(Calendar.DAY_OF_YEAR) - cDateComparing.get(Calendar.DAY_OF_YEAR);
+		i = i > 28 ? cDateComparing.get(Calendar.YEAR) % 4 == 0 ? 366 - i + 1 : 365 - i + 1 : i + 1;
+
+		long millis = cDateComparing.getTimeInMillis();
+		for (int j = 0; j < i; j++) {
+			Date toAdd = new Date(millis);
+			String dateParsed = formatter.format(toAdd);
+			res.put(dateParsed, 0);
+			millis += 86400000L;
+		}
+
 		return res;
 	}
 
