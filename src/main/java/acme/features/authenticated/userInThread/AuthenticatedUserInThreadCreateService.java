@@ -139,9 +139,11 @@ public class AuthenticatedUserInThreadCreateService implements AbstractCreateSer
 			idOfUsersInThread = this.repository.findUserIdInThread(threadId);
 			userIsNotInThread = !idOfUsersInThread.contains(userId);
 
-			errors.state(request, userIsNotInThread, "userId", "error.user-in-thread");
+			if (!userIsNotInThread) {
+				throw new IllegalArgumentException();
+			}
 		} else {
-			errors.state(request, userExists, "userId", "error.user-not-exists");
+			throw new IllegalArgumentException();
 		}
 
 	}

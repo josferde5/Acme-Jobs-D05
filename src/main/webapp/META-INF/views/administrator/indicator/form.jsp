@@ -213,7 +213,7 @@ $(document).ready(function() {
 
     labels: [ <jstl:forEach 
 			    var="map" 
-			    items="${pendingApplicationsPerDayLastFourMonths}">
+			    items="${pendingApplicationsPerDayLastFourWeeks}">
 			    		 "${map.key}",
 			   </jstl:forEach> 
 			],
@@ -222,7 +222,7 @@ $(document).ready(function() {
         label: "Pending applications",
         data: [ <jstl:forEach 
 			    var="map" 
-			    items="${pendingApplicationsPerDayLastFourMonths}">
+			    items="${pendingApplicationsPerDayLastFourWeeks}">
 			    		 ${map.value},
 			   </jstl:forEach> ],
 		borderColor: '#fe8b36',
@@ -269,7 +269,7 @@ $(document).ready(function() {
 
     labels: [ <jstl:forEach 
 			    var="map" 
-			    items="${acceptedApplicationsPerDayLastFourMonths}">
+			    items="${acceptedApplicationsPerDayLastFourWeeks}">
 			    		 "${map.key}",
 			   </jstl:forEach> 
 			],
@@ -278,7 +278,7 @@ $(document).ready(function() {
         label: "Accepted applications",
         data: [ <jstl:forEach 
 			    	var="map" 
-			    	items="${acceptedApplicationsPerDayLastFourMonths}">
+			    	items="${acceptedApplicationsPerDayLastFourWeeks}">
 			    		 ${map.value},
 			   		</jstl:forEach> ],
 		borderColor: '#fe8b36',
@@ -324,7 +324,7 @@ $(document).ready(function() {
 
     labels: [ <jstl:forEach 
 			    var="map" 
-			    items="${rejectedApplicationsPerDayLastFourMonths}">
+			    items="${rejectedApplicationsPerDayLastFourWeeks}">
 			    		 "${map.key}",
 			   </jstl:forEach> 
 			],
@@ -333,7 +333,7 @@ $(document).ready(function() {
         label: "Rejected applications",
         data: [ <jstl:forEach 
 			    	var="map" 
-			    	items="${rejectedApplicationsPerDayLastFourMonths}">
+			    	items="${rejectedApplicationsPerDayLastFourWeeks}">
 			    		 ${map.value},
 			   		</jstl:forEach> ],
 		borderColor: '#fe8b36',
