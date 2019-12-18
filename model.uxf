@@ -154,7 +154,7 @@ bg=yellow</panel_attributes>
       <x>544</x>
       <y>80</y>
       <w>176</w>
-      <h>192</h>
+      <h>176</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Enum&gt;&gt;
 CustomCommand
@@ -163,12 +163,11 @@ CustomCommand
 + LIST_TOP
 + LIST_DUTIES
 + LIST_MINE
-+ LIST_THREADS
++ LIST_THREAD
 + LIST_NOT_MINE
-+ ADD_USER_LIST
-+ LIST_USERS_THREAD
-+ ADD_USER_THREAD
-+ DELETE_USER_THREAD
++ LIST_GROUP_REFERENCE
++ LIST_GROUP_STATUS
++ LIST_GROUP_CREATION
 + ACCEPT
 + REJECT
 
